@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#164e7a">
+<title>Real Estate CRM</title>
+<style>
+:root{--blue:#164e7a;--blue2:#0f3b5d;--bg:#f4f7fa;--card:#fff;--text:#172033;--muted:#687386;--line:#e1e7ee;--green:#16834b;--red:#b42318;--orange:#b56700}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+.app{max-width:1100px;margin:auto;min-height:100vh;background:var(--bg)}
+header{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;padding:24px 20px;border-radius:0 0 24px 24px}
+header h1{margin:0 0 5px;font-size:27px}header p{margin:0;opacity:.86;font-size:14px}
+nav{display:flex;background:#fff;position:sticky;top:0;z-index:5;border-bottom:1px solid var(--line);overflow-x:auto;box-shadow:0 2px 8px #00000008}
+nav button{flex:1;min-width:115px;padding:14px 8px;border:0;background:#fff;color:#607084;font-weight:800;font-size:12px;border-bottom:3px solid transparent}
+nav button.active{color:var(--blue);border-bottom-color:var(--blue)}
+main{padding:18px}.page{display:none}.page.active{display:block}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{background:var(--card);border:1px solid #e7edf3;border-radius:16px;padding:16px;box-shadow:0 5px 18px #11395c0d}.card small{color:var(--muted);font-size:11px}.amount{font-size:24px;font-weight:900;margin-top:7px}
+.section{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:22px 0 11px}.section h2{font-size:19px;margin:0}
+button.primary,.primary{border:0;border-radius:10px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:800;cursor:pointer}
+button.secondary{border:0;border-radius:10px;padding:9px 12px;background:#edf2f6;color:var(--text);font-weight:800;cursor:pointer}
+button.danger{border:0;border-radius:10px;padding:8px 11px;background:#fff0ef;color:var(--red);font-weight:800;cursor:pointer}
+.toolbar{display:flex;gap:8px;margin-bottom:12px}.toolbar input{flex:1}
+input,select,textarea{width:100%;padding:11px 12px;border:1px solid #d6dee8;border-radius:10px;background:#fff;color:var(--text);font-size:14px}textarea{min-height:80px;resize:vertical}
+label{font-size:11px;color:#596579;font-weight:700;display:block;margin:3px 0 4px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.full{grid-column:1/-1}
+.item{background:#fff;border:1px solid #e5ebf1;border-radius:16px;padding:15px;margin-bottom:10px;box-shadow:0 5px 18px #11395c0d}
+.item h3{margin:0 0 6px;font-size:17px}.muted{color:var(--muted);font-size:12px;line-height:1.5}.row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:10px;flex-wrap:wrap}.actions{display:flex;gap:7px;flex-wrap:wrap}
+.badge{display:inline-block;padding:5px 9px;border-radius:20px;font-size:10px;font-weight:900}.available{background:#e8f7ef;color:var(--green)}.sold{background:#eef0f4;color:#586274}.rent{background:#fff3df;color:var(--orange)}.lead{background:#e9f2ff;color:#1459a0}
+.empty{background:#fff;border:1px dashed #ccd6e0;border-radius:15px;padding:28px;text-align:center;color:var(--muted)}
+.modal{display:none;position:fixed;inset:0;background:#0008;z-index:20;align-items:flex-end;justify-content:center}.sheet{width:min(650px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:24px 24px 0 0;padding:20px}.sheet h2{margin:0 0 14px;font-size:20px}.form-actions{display:flex;gap:8px;margin-top:14px}.form-actions button{flex:1}
+.dashboard-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}.quick{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px}.quick h3{margin:0 0 9px;font-size:15px}
+.small-stat{font-size:12px;color:var(--muted);margin:5px 0}
+footer{text-align:center;color:#8994a3;font-size:11px;padding:25px 10px}
+@media(max-width:700px){.cards{grid-template-columns:1fr 1fr}.dashboard-list{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.full{grid-column:auto}main{padding:13px}.section h2{font-size:17px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><h1>Real Estate CRM</h1><p>Properties • Owners • Buyers & Clients</p></header>
+<nav>
+<button class="active" onclick="showPage('dashboard',this)">Dashboard</button>
+<button onclick="showPage('properties',this)">Properties</button>
+<button onclick="showPage('owners',this)">Owners</button>
+<button onclick="showPage('clients',this)">Clients</button>
+</nav>
+<main>
+
+<section id="dashboard" class="page active">
+<div class="cards">
+<div class="card"><small>Total Properties</small><div class="amount" id="statProperties">0</div></div>
+<div class="card"><small>Available</small><div class="amount" id="statAvailable">0</div></div>
+<div class="card"><small>Owners</small><div class="amount" id="statOwners">0</div></div>
+<div class="card"><small>Clients</small><div class="amount" id="statClients">0</div></div>
+</div>
+<div class="section"><h2>Quick Overview</h2><button class="primary" onclick="openProperty()">+ Add Property</button></div>
+<div class="dashboard-list">
+<div class="quick"><h3>Latest Properties</h3><div id="latestProperties"></div></div>
+<div class="quick"><h3>Latest Clients</h3><div id="latestClients"></div></div>
+</div>
+<div class="section"><h2>Getting Started</h2></div>
+<div class="item muted">Start by adding your property owners, then add properties and buyers/clients. All records are stored in this browser using local storage, so this first version works without a server.</div>
+</section>
+
+<section id="properties" class="page">
+<div class="section"><h2>Properties</h2><button class="primary" onclick="openProperty()">+ Add Property</button></div>
+<div class="toolbar"><input id="propertySearch" placeholder="Search property, location, owner..." oninput="renderProperties()"></div>
+<div id="propertyList"></div>
+</section>
+
+<section id="owners" class="page">
+<div class="section"><h2>Property Owners</h2><button class="primary" onclick="openOwner()">+ Add Owner</button></div>
+<div class="toolbar"><input id="ownerSearch" placeholder="Search owner or mobile..." oninput="renderOwners()"></div>
+<div id="ownerList"></div>
+</section>
+
+<section id="clients" class="page">
+<div class="section"><h2>Buyers / Clients</h2><button class="primary" onclick="openClient()">+ Add Client</button></div>
+<div class="toolbar"><input id="clientSearch" placeholder="Search client, location, requirement..." oninput="renderClients()"></div>
+<div id="clientList"></div>
+</section>
+
+</main>
+<footer>Real Estate CRM • Version 1 • Data is stored locally in this browser</footer>
+</div>
+
+<!-- Property modal -->
+<div class="modal" id="propertyModal"><div class="sheet">
+<h2 id="propertyTitle">Add Property</h2>
+<div class="grid">
+<div><label>Property ID</label><input id="pId" placeholder="Auto generated"></div>
+<div><label>Status</label><select id="pStatus"><option>Available</option><option>Hold</option><option>Sold</option><option>Rented</option></select></div>
+<div><label>Property Type</label><select id="pType"><option>Flat</option><option>Villa</option><option>House</option><option>Plot</option><option>Shop</option><option>Office</option><option>Warehouse</option><option>Other</option></select></div>
+<div><label>Listing Type</label><select id="pListing"><option>Sale</option><option>Rent</option></select></div>
+<div><label>Building / Society</label><input id="pBuilding" placeholder="e.g. Green Residency"></div>
+<div><label>Flat / Unit No.</label><input id="pUnit" placeholder="e.g. Flat 402"></div>
+<div class="full"><label>Address</label><input id="pAddress" placeholder="Full address"></div>
+<div><label>Location / Area</label><input id="pLocation" placeholder="e.g. Thane West"></div>
+<div><label>Area (sq.ft.)</label><input id="pArea" type="number" placeholder="850"></div>
+<div><label>BHK</label><input id="pBhk" placeholder="2 BHK"></div>
+<div><label>Floor</label><input id="pFloor" placeholder="8th"></div>
+<div><label>Price (₹)</label><input id="pPrice" type="number" placeholder="9500000"></div>
+<div><label>Owner</label><select id="pOwner"></select></div>
+<div class="full"><label>Remarks</label><textarea id="pRemarks" placeholder="Property notes, features, documents, etc."></textarea></div>
+</div>
+<div class="form-actions"><button class="secondary" onclick="closeModal('propertyModal')">Cancel</button><button class="primary" onclick="saveProperty()">Save Property</button></div>
+</div></div>
+
+<!-- Owner modal -->
+<div class="modal" id="ownerModal"><div class="sheet">
+<h2 id="ownerTitle">Add Property Owner</h2>
+<div class="grid">
+<div><label>Owner ID</label><input id="oId" placeholder="Auto generated"></div>
+<div><label>Owner Name *</label><input id="oName" placeholder="Full name"></div>
+<div><label>Mobile *</label><input id="oMobile" placeholder="Mobile number"></div>
+<div><label>WhatsApp</label><input id="oWhatsapp" placeholder="WhatsApp number"></div>
+<div><label>Email</label><input id="oEmail" type="email" placeholder="Email"></div>
+<div><label>Preferred Contact</label><select id="oContact"><option>Phone</option><option>WhatsApp</option><option>Email</option></select></div>
+<div class="full"><label>Address</label><input id="oAddress" placeholder="Owner address"></div>
+<div><label>Expected Price (₹)</label><input id="oExpected" type="number" placeholder="10000000"></div>
+<div><label>Minimum Price (₹)</label><input id="oMinimum" type="number" placeholder="9500000"></div>
+<div class="full"><label>Notes</label><textarea id="oNotes" placeholder="Owner requirements / notes"></textarea></div>
+</div>
+<div class="form-actions"><button class="secondary" onclick="closeModal('ownerModal')">Cancel</button><button class="primary" onclick="saveOwner()">Save Owner</button></div>
+</div></div>
+
+<!-- Client modal -->
+<div class="modal" id="clientModal"><div class="sheet">
+<h2 id="clientTitle">Add Buyer / Client</h2>
+<div class="grid">
+<div><label>Client ID</label><input id="cId" placeholder="Auto generated"></div>
+<div><label>Client Name *</label><input id="cName" placeholder="Full name"></div>
+<div><label>Mobile *</label><input id="cMobile" placeholder="Mobile number"></div>
+<div><label>WhatsApp</label><input id="cWhatsapp" placeholder="WhatsApp number"></div>
+<div><label>Email</label><input id="cEmail" type="email" placeholder="Email"></div>
+<div><label>Lead Status</label><select id="cStatus"><option>New</option><option>Contacted</option><option>Requirement Confirmed</option><option>Property Shared</option><option>Site Visit</option><option>Negotiation</option><option>Token</option><option>Closed</option><option>Not Interested</option></select></div>
+<div><label>Preferred Location</label><input id="cLocation" placeholder="e.g. Thane West"></div>
+<div><label>Property Type</label><select id="cType"><option>Any</option><option>Flat</option><option>Villa</option><option>House</option><option>Plot</option><option>Shop</option><option>Office</option><option>Warehouse</option></select></div>
+<div><label>BHK Requirement</label><input id="cBhk" placeholder="e.g. 2 or 3 BHK"></div>
+<div><label>Minimum Budget (₹)</label><input id="cMin" type="number" placeholder="8000000"></div>
+<div><label>Maximum Budget (₹)</label><input id="cMax" type="number" placeholder="11000000"></div>
+<div><label>Purpose</label><select id="cPurpose"><option>Self-use</option><option>Investment</option><option>Other</option></select></div>
+<div><label>Loan Required</label><select id="cLoan"><option>No</option><option>Yes</option></select></div>
+<div><label>Preferred Area (sq.ft.)</label><input id="cArea" type="number" placeholder="800"></div>
+<div class="full"><label>Requirements / Notes</label><textarea id="cNotes" placeholder="Parking, floor preference, possession, furnishing, etc."></textarea></div>
+</div>
+<div class="form-actions"><button class="secondary" onclick="closeModal('clientModal')">Cancel</button><button class="primary" onclick="saveClient()">Save Client</button></div>
+</div></div>
+
+<script>
+const KEY='realEstateCRM_v1';
+let db=JSON.parse(localStorage.getItem(KEY)||'null')||{properties:[],owners:[],clients:[]};
+let editing={type:null,id:null};
+const $=id=>document.getElementById(id);
+const money=n=>n?('₹'+Number(n).toLocaleString('en-IN')):'—';
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+function persist(){localStorage.setItem(KEY,JSON.stringify(db));}
+function uid(prefix){return prefix+'-'+Date.now().toString().slice(-7);}
+function showPage(id,btn){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');renderAll();}
+function openModal(id){$(id).style.display='flex'}
+function closeModal(id){$(id).style.display='none'}
+window.addEventListener('click',e=>{if(e.target.classList.contains('modal'))e.target.style.display='none'});
+
+function ownerName(id){const o=db.owners.find(x=>x.id===id);return o?o.name:'No owner assigned'}
+function renderAll(){renderStats();renderProperties();renderOwners();renderClients();renderDashboard();}
+function renderStats(){$('statProperties').textContent=db.properties.length;$('statAvailable').textContent=db.properties.filter(p=>p.status==='Available').length;$('statOwners').textContent=db.owners.length;$('statClients').textContent=db.clients.length;}
+function renderDashboard(){
+$('latestProperties').innerHTML=db.properties.slice(-4).reverse().map(p=>`<div class="small-stat"><b>${esc(p.building||p.type)}</b> — ${esc(p.location||p.address||'')}<br>${money(p.price)} · ${esc(p.status)}</div>`).join('')||'<div class="muted">No properties yet.</div>';
+$('latestClients').innerHTML=db.clients.slice(-4).reverse().map(c=>`<div class="small-stat"><b>${esc(c.name)}</b> — ${esc(c.location||'Location not set')}<br>${esc(c.status)} · ${money(c.maxBudget)}</div>`).join('')||'<div class="muted">No clients yet.</div>';
+}
+
+function renderProperties(){
+const q=($('propertySearch')?.value||'').toLowerCase();
+const arr=db.properties.filter(p=>JSON.stringify(p).toLowerCase().includes(q));
+$('propertyList').innerHTML=arr.map(p=>`<div class="item">
+<div class="row"><div><h3>${esc(p.building||p.type)} ${p.unit?'— '+esc(p.unit):''}</h3><div class="muted">${esc(p.location||p.address||'')} · ${esc(p.type)} · ${esc(p.listing)}</div></div><span class="badge ${p.status==='Available'?'available':p.status==='Rented'?'rent':'sold'}">${esc(p.status)}</span></div>
+<div class="row"><div><b>${money(p.price)}</b> ${p.area?'· '+esc(p.area)+' sq.ft.':''} ${p.bhk?'· '+esc(p.bhk):''} ${p.floor?'· Floor '+esc(p.floor):''}</div><div class="muted">Owner: ${esc(ownerName(p.ownerId))}</div></div>
+${p.remarks?`<div class="muted" style="margin-top:8px">${esc(p.remarks)}</div>`:''}
+<div class="actions" style="margin-top:11px"><button class="secondary" onclick="editProperty('${p.id}')">Edit</button><button class="danger" onclick="deleteProperty('${p.id}')">Delete</button></div>
+</div>`).join('')||'<div class="empty">No properties found.<br>Add your first property.</div>';
+}
+function fillOwnerSelect(selected=''){const s=$('pOwner');s.innerHTML='<option value="">— Select owner —</option>'+db.owners.map(o=>`<option value="${o.id}" ${o.id===selected?'selected':''}>${esc(o.name)} — ${esc(o.mobile)}</option>`).join('');}
+function resetProperty(){['pId','pBuilding','pUnit','pAddress','pLocation','pArea','pBhk','pFloor','pPrice','pRemarks'].forEach(x=>$(x).value='');$('pStatus').value='Available';$('pType').value='Flat';$('pListing').value='Sale';fillOwnerSelect();editing={type:null,id:null};$('propertyTitle').textContent='Add Property';}
+function openProperty(){resetProperty();$('pId').value=uid('PROP');openModal('propertyModal')}
+function editProperty(id){const p=db.properties.find(x=>x.id===id);if(!p)return;editing={type:'property',id};$('propertyTitle').textContent='Edit Property';$('pId').value=p.displayId||p.id;$('pStatus').value=p.status;$('pType').value=p.type;$('pListing').value=p.listing;$('pBuilding').value=p.building||'';$('pUnit').value=p.unit||'';$('pAddress').value=p.address||'';$('pLocation').value=p.location||'';$('pArea').value=p.area||'';$('pBhk').value=p.bhk||'';$('pFloor').value=p.floor||'';$('pPrice').value=p.price||'';$('pRemarks').value=p.remarks||'';fillOwnerSelect(p.ownerId||'');openModal('propertyModal')}
+function saveProperty(){
+const building=$('pBuilding').value.trim(),location=$('pLocation').value.trim();if(!building&&!location){alert('Enter at least the building/property name or location.');return}
+const obj={id:editing.id||Date.now().toString(),displayId:$('pId').value.trim()||uid('PROP'),status:$('pStatus').value,type:$('pType').value,listing:$('pListing').value,building,unit:$('pUnit').value.trim(),address:$('pAddress').value.trim(),location,area:$('pArea').value,bhk:$('pBhk').value.trim(),floor:$('pFloor').value.trim(),price:$('pPrice').value,ownerId:$('pOwner').value,remarks:$('pRemarks').value.trim()};
+if(editing.id){const i=db.properties.findIndex(x=>x.id===editing.id);db.properties[i]=obj}else db.properties.push(obj);persist();closeModal('propertyModal');renderAll();
+}
+function deleteProperty(id){if(confirm('Delete this property?')){db.properties=db.properties.filter(x=>x.id!==id);persist();renderAll()}}
+
+function renderOwners(){
+const q=($('ownerSearch')?.value||'').toLowerCase();const arr=db.owners.filter(o=>JSON.stringify(o).toLowerCase().includes(q));
+$('ownerList').innerHTML=arr.map(o=>{const count=db.properties.filter(p=>p.ownerId===o.id).length;return `<div class="item"><h3>${esc(o.name)}</h3><div class="muted">${esc(o.mobile)}${o.email?' · '+esc(o.email):''} · ${count} property${count===1?'':'ies'}</div><div class="row"><div class="muted">${esc(o.address||'Address not set')}</div><div class="actions"><button class="secondary" onclick="editOwner('${o.id}')">Edit</button><button class="danger" onclick="deleteOwner('${o.id}')">Delete</button></div></div></div>`}).join('')||'<div class="empty">No owners found.<br>Add your first property owner.</div>';
+}
+function resetOwner(){['oId','oName','oMobile','oWhatsapp','oEmail','oAddress','oExpected','oMinimum','oNotes'].forEach(x=>$(x).value='');$('oContact').value='Phone';editing={type:null,id:null};$('ownerTitle').textContent='Add Property Owner'}
+function openOwner(){resetOwner();$('oId').value=uid('OWN');openModal('ownerModal')}
+function editOwner(id){const o=db.owners.find(x=>x.id===id);if(!o)return;editing={type:'owner',id};$('ownerTitle').textContent='Edit Property Owner';$('oId').value=o.displayId||o.id;$('oName').value=o.name;$('oMobile').value=o.mobile;$('oWhatsapp').value=o.whatsapp||'';$('oEmail').value=o.email||'';$('oContact').value=o.contact||'Phone';$('oAddress').value=o.address||'';$('oExpected').value=o.expected||'';$('oMinimum').value=o.minimum||'';$('oNotes').value=o.notes||'';openModal('ownerModal')}
+function saveOwner(){const name=$('oName').value.trim(),mobile=$('oMobile').value.trim();if(!name||!mobile){alert('Owner name and mobile are required.');return}const obj={id:editing.id||Date.now().toString(),displayId:$('oId').value.trim()||uid('OWN'),name,mobile,whatsapp:$('oWhatsapp').value.trim(),email:$('oEmail').value.trim(),contact:$('oContact').value,address:$('oAddress').value.trim(),expected:$('oExpected').value,minimum:$('oMinimum').value,notes:$('oNotes').value.trim()};if(editing.id){const i=db.owners.findIndex(x=>x.id===editing.id);db.owners[i]=obj}else db.owners.push(obj);persist();closeModal('ownerModal');renderAll()}
+function deleteOwner(id){const used=db.properties.some(p=>p.ownerId===id);if(used){alert('This owner is linked to one or more properties. Edit those properties first.');return}if(confirm('Delete this owner?')){db.owners=db.owners.filter(x=>x.id!==id);persist();renderAll()}}
+
+function renderClients(){
+const q=($('clientSearch')?.value||'').toLowerCase();const arr=db.clients.filter(c=>JSON.stringify(c).toLowerCase().includes(q));
+$('clientList').innerHTML=arr.map(c=>`<div class="item"><div class="row"><div><h3>${esc(c.name)}</h3><div class="muted">${esc(c.mobile)}${c.email?' · '+esc(c.email):''}</div></div><span class="badge lead">${esc(c.status)}</span></div><div class="row"><div><b>${esc(c.location||'Any location')}</b> · ${esc(c.type||'Any')} · ${esc(c.bhk||'Any BHK')}</div><div>${c.maxBudget?money(c.minBudget)+' – '+money(c.maxBudget):'Budget not set'}</div></div><div class="muted" style="margin-top:7px">Purpose: ${esc(c.purpose)} · Loan: ${esc(c.loan)}</div>${c.notes?`<div class="muted" style="margin-top:7px">${esc(c.notes)}</div>`:''}<div class="actions" style="margin-top:11px"><button class="secondary" onclick="editClient('${c.id}')">Edit</button><button class="danger" onclick="deleteClient('${c.id}')">Delete</button></div></div>`).join('')||'<div class="empty">No clients found.<br>Add your first buyer/client.</div>';
+}
+function resetClient(){['cId','cName','cMobile','cWhatsapp','cEmail','cLocation','cBhk','cMin','cMax','cArea','cNotes'].forEach(x=>$(x).value='');$('cStatus').value='New';$('cType').value='Any';$('cPurpose').value='Self-use';$('cLoan').value='No';editing={type:null,id:null};$('clientTitle').textContent='Add Buyer / Client'}
+function openClient(){resetClient();$('cId').value=uid('CLI');openModal('clientModal')}
+function editClient(id){const c=db.clients.find(x=>x.id===id);if(!c)return;editing={type:'client',id};$('clientTitle').textContent='Edit Buyer / Client';$('cId').value=c.displayId||c.id;$('cName').value=c.name;$('cMobile').value=c.mobile;$('cWhatsapp').value=c.whatsapp||'';$('cEmail').value=c.email||'';$('cStatus').value=c.status||'New';$('cLocation').value=c.location||'';$('cType').value=c.type||'Any';$('cBhk').value=c.bhk||'';$('cMin').value=c.minBudget||'';$('cMax').value=c.maxBudget||'';$('cPurpose').value=c.purpose||'Self-use';$('cLoan').value=c.loan||'No';$('cArea').value=c.area||'';$('cNotes').value=c.notes||'';openModal('clientModal')}
+function saveClient(){const name=$('cName').value.trim(),mobile=$('cMobile').value.trim();if(!name||!mobile){alert('Client name and mobile are required.');return}const obj={id:editing.id||Date.now().toString(),displayId:$('cId').value.trim()||uid('CLI'),name,mobile,whatsapp:$('cWhatsapp').value.trim(),email:$('cEmail').value.trim(),status:$('cStatus').value,location:$('cLocation').value.trim(),type:$('cType').value,bhk:$('cBhk').value.trim(),minBudget:$('cMin').value,maxBudget:$('cMax').value,purpose:$('cPurpose').value,loan:$('cLoan').value,area:$('cArea').value,notes:$('cNotes').value.trim()};if(editing.id){const i=db.clients.findIndex(x=>x.id===editing.id);db.clients[i]=obj}else db.clients.push(obj);persist();closeModal('clientModal');renderAll()}
+function deleteClient(id){if(confirm('Delete this client?')){db.clients=db.clients.filter(x=>x.id!==id);persist();renderAll()}}
+
+renderAll();
+</script>
+</body>
+</html>
