@@ -233,9 +233,42 @@ function openBrokerageDetails(dealId){
   <div class="form-actions"><button type="button" onclick="closeModal()">Close</button></div>`);
 }
 function dealReceived(id){return state.brokerage_payments.filter(p=>p.deal_id===id).reduce((s,p)=>s+Number(p.amount||0),0)}
-function dealForm(x){return `<div class=grid><div><label>Deal ID</label><input id=fid value="${esc(x.deal_id||('DEAL-'+Date.now().toString().slice(-7)))}"></div><div><label>Property *</label><select id=f1>${opts(state.properties,x.property_id,'Select property')}</select></div><div><label>Client / Buyer</label><select id=f2>${opts(state.clients,x.client_id,'Optional')}</select></div><div><label>Owner / Seller</label><select id=f3>${opts(state.owners,x.owner_id,'Optional')}</select></div><div><label>Other Agent</label><select id=f4>${opts(state.agents,x.agent_id,'Optional',a=>a.name+' · '+(a.mobile||''))}</select></div><div><label>Employee</label><select id=f5>${opts(state.employees,x.employee_id,'Optional',a=>a.name+' · '+(a.designation||''))}</select></div><div><label>Status</label><select id=f6>${['Negotiation','Token Received','Agreement','Registration','Closed','Cancelled'].map(v=>`<option ${v===(x.status||'Negotiation')?'selected':''}>${v}</option>`).join('')}</select></div><div><label>Final Price ₹</label><input id=f7 type=number value="${esc(x.final_price)}"></div><div><label>Token ₹</label><input id=f8 type=number value="${esc(x.token_amount)}"></div><div><label>Total Brokerage ₹</label><input id=f9 type=number value="${esc(x.total_brokerage??x.brokerage_amount)}"></div><div><label>Incentive %</label><input id=f10 type=number min=0 max=100 step=0.01 value="${esc(x.incentive_percentage||0)}"></div><div><label>Incentive Paid ₹</label><input id=f11 type=number min=0 value="${esc(x.incentive_paid||0)}"></div><div><label>Deal Date</label><input id=f12 type=date value="${esc(x.deal_date||today())}"></div><div class=full><label>Notes</label><textarea id=f13>${esc(x.notes)}</textarea></div><div class=full><div class=hint>Brokerage received and pending are calculated from individual Brokerage Payments. After saving the deal, use <b>Brokerage Details</b> to record each payment separately and see the complete payment history. Incentive earned = actual brokerage received × incentive %.</div></div></div>`}
+function partyBrokerage(d){
+  const ps=state.brokerage_payments.filter(p=>p.deal_id===d.id);
+  const sum=k=>ps.filter(p=>p.paid_by===k).reduce((s,p)=>s+Number(p.amount||0),0);
+  return {client:sum('Client'),owner:sum('Owner'),agent:sum('Other Agent')};
+}
+
+function dealForm(x){return `<div class=grid>
+<div><label>Deal ID</label><input id=fid value="${esc(x.deal_id||('DEAL-'+Date.now().toString().slice(-7)))}"></div>
+<div><label>Property *</label><select id=f1>${opts(state.properties,x.property_id,'Select property')}</select></div>
+<div><label>Client / Buyer</label><select id=f2>${opts(state.clients,x.client_id,'Optional')}</select></div>
+<div><label>Owner / Seller</label><select id=f3>${opts(state.owners,x.owner_id,'Optional')}</select></div>
+<div><label>Other Agent</label><select id=f4>${opts(state.agents,x.agent_id,'Optional',a=>a.name+' · '+(a.mobile||''))}</select></div>
+<div><label>Employee</label><select id=f5>${opts(state.employees,x.employee_id,'Optional',a=>a.name+' · '+(a.designation||''))}</select></div>
+<div><label>Status</label><select id=f6>${['Negotiation','Token Received','Agreement','Registration','Closed','Cancelled'].map(v=>`<option ${v===(x.status||'Negotiation')?'selected':''}>${v}</option>`).join('')}</select></div>
+<div><label>Final Price ₹</label><input id=f7 type=number value="${esc(x.final_price)}"></div>
+<div><label>Token ₹</label><input id=f8 type=number value="${esc(x.token_amount)}"></div>
+<div><label>Client Brokerage ₹</label><input id=clientBrokerage type=number min=0 step=0.01 value="${esc(x.client_brokerage||0)}"></div>
+<div><label>Owner Brokerage ₹</label><input id=ownerBrokerage type=number min=0 step=0.01 value="${esc(x.owner_brokerage||0)}"></div>
+<div><label>Other Agent Brokerage ₹</label><input id=agentBrokerage type=number min=0 step=0.01 value="${esc(x.agent_brokerage||0)}"></div>
+<div><label>Total Brokerage ₹</label><input id=f9 type=number value="${esc(x.total_brokerage??x.brokerage_amount??0)}" readonly></div>
+<div><label>Incentive %</label><input id=f10 type=number min=0 max=100 step=0.01 value="${esc(x.incentive_percentage||0)}"></div>
+<div><label>Incentive Paid ₹</label><input id=f11 type=number min=0 value="${esc(x.incentive_paid||0)}"></div>
+<div><label>Deal Date</label><input id=f12 type=date value="${esc(x.deal_date||today())}"></div>
+<div class=full><label>Notes</label><textarea id=f13>${esc(x.notes)}</textarea></div>
+<div class=full><div class=hint>Client, Owner and Other Agent brokerage are tracked separately. Total Brokerage is the sum of these amounts. Individual received payments are recorded separately.</div></div>
+</div>`}
 function openDeal(id){editing=id||null;const x=id?state.deals.find(a=>a.id===id):{};modal(id?'Edit Deal':'Add Deal',dealForm(x)+`<div class="form-actions"><button type="button" onclick="closeModal()">Cancel</button><button type="button" class="primary" onclick="saveDeal()">${id?'Update Deal':'Save Deal'}</button></div>`)}
-async function saveDeal(){const o={id:editing||uuid(),deal_id:$('fid').value.trim(),property_id:$('f1').value,client_id:$('f2').value||null,owner_id:$('f3').value||null,agent_id:$('f4').value||null,employee_id:$('f5').value||null,status:$('f6').value,final_price:num('f7'),token_amount:num('f8'),total_brokerage:num('f9')||0,brokerage_amount:num('f9')||0,incentive_percentage:num('f10')||0,incentive_paid:num('f11')||0,deal_date:$('f12').value||null,notes:$('f13').value.trim(),assigned_to:state.user.id};if(!o.property_id)return alert('Select a property');if(!o.client_id&&!o.owner_id&&!o.agent_id)return alert('Select at least one party: Client, Owner or Other Agent');const ok=await saveRow('deals',o);if(ok&&o.status==='Closed')await sb.from('properties').update({status:'Sold',updated_at:new Date().toISOString()}).eq('id',o.property_id)}
+async function saveDeal(){
+const clientBrokerage=num('clientBrokerage')||0, ownerBrokerage=num('ownerBrokerage')||0, agentBrokerage=num('agentBrokerage')||0;
+const totalBrokerage=clientBrokerage+ownerBrokerage+agentBrokerage;
+const o={id:editing||uuid(),deal_id:$('fid').value.trim(),property_id:$('f1').value,client_id:$('f2').value||null,owner_id:$('f3').value||null,agent_id:$('f4').value||null,employee_id:$('f5').value||null,status:$('f6').value,final_price:num('f7'),token_amount:num('f8'),client_brokerage:clientBrokerage,owner_brokerage:ownerBrokerage,agent_brokerage:agentBrokerage,total_brokerage:totalBrokerage,brokerage_amount:totalBrokerage,incentive_percentage:num('f10')||0,incentive_paid:num('f11')||0,deal_date:$('f12').value||null,notes:$('f13').value.trim(),assigned_to:state.user.id};
+if(!o.property_id)return alert('Select a property');
+if(!o.client_id&&!o.owner_id&&!o.agent_id)return alert('Select at least one party: Client, Owner or Other Agent');
+const ok=await saveRow('deals',o);
+if(ok&&o.status==='Closed')await sb.from('properties').update({status:'Sold',updated_at:new Date().toISOString()}).eq('id',o.property_id);
+}
 function num(id){const v=$(id).value;return v===''?null:Number(v)}
 async function saveRow(table,o){try{const {data,error}=await sb.from(table).upsert(o).select().single();if(error)throw error;const key=table==='site_visits'?'visits':table;const i=state[key].findIndex(x=>x.id===data.id);if(i>=0)state[key][i]=data;else state[key].push(data);closeModal();render();return true}catch(e){alert('Could not save: '+e.message);return false}}
 async function delRecord(table,id){if(!confirm('Delete this record?'))return;try{const {error}=await sb.from(table).delete().eq('id',id);if(error)throw error;const key=table==='site_visits'?'visits':table;state[key]=state[key].filter(x=>x.id!==id);render()}catch(e){alert('Could not delete: '+e.message)}}
