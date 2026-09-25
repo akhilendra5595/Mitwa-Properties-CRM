@@ -13,7 +13,7 @@
 
 /* C6 Follow-ups - clean card layout */
 .follow-toolbar{display:grid;grid-template-columns:1fr 220px;gap:10px;margin-bottom:14px}.follow-toolbar input,.follow-toolbar select{min-height:48px;padding:12px 14px;border-radius:13px;font-size:14px}.follow-list{display:flex;flex-direction:column;gap:12px}.follow-card{background:#fff;border:1px solid #dfe8f1;border-radius:17px;padding:14px;box-shadow:0 5px 18px #11395c0b;display:grid;grid-template-columns:112px 1fr auto;gap:15px;align-items:center}.follow-datebox{background:#edf6ff;border:1px solid #d8e9f8;border-radius:12px;padding:10px;text-align:center;min-height:106px;display:flex;flex-direction:column;justify-content:center;gap:3px}.follow-datebox .fdate{font-weight:900;color:#153d68;font-size:14px}.follow-datebox .fday{font-size:12px;color:#506b8b}.follow-datebox .ftime{font-size:12px;color:#506b8b;margin-top:4px}.follow-main{min-width:0}.follow-title{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:7px}.follow-title h3{margin:0;font-size:17px;color:#153d68}.follow-type{background:#eaf3ff;color:#1662b5;border-radius:18px;padding:5px 9px;font-size:10px;font-weight:900}.follow-meta{display:grid;gap:7px;color:#50617a;font-size:12px}.follow-meta-row{display:flex;align-items:flex-start;gap:8px}.follow-meta-row b{color:#233a57}.follow-notes{color:#687386;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:520px}.follow-actions{display:flex;align-items:center;gap:7px;border-left:1px solid #e3eaf1;padding-left:14px}.follow-actions .secondary{background:#f2f7fb;color:#23466c;border:1px solid #d7e4ef}.follow-menu{position:relative}.follow-menu summary{list-style:none;cursor:pointer;padding:9px 11px;border:1px solid #d7e4ef;border-radius:10px;background:#fff;color:#23466c;font-weight:900}.follow-menu summary::-webkit-details-marker{display:none}.follow-menu[open] .follow-menu-list{display:flex}.follow-menu-list{display:none;position:absolute;right:0;top:42px;background:#fff;border:1px solid #dbe4ec;border-radius:12px;box-shadow:0 10px 28px #11395c20;padding:6px;z-index:8;flex-direction:column;min-width:125px}.follow-menu-list button{border:0;background:#fff;text-align:left;padding:9px;border-radius:8px}.follow-menu-list button:hover{background:#f4f8fb}.follow-footer{margin-top:14px;background:#edf6ff;border:1px solid #d8e9f8;border-radius:14px;padding:12px 14px;color:#506b8b;font-size:12px;display:flex;justify-content:space-between;gap:10px;align-items:center}.follow-count{font-weight:800}.follow-overdue{border-left:4px solid #b42318}.follow-completed{border-left:4px solid #2b8a57}.follow-cancelled{border-left:4px solid #9aa5b1}.follow-empty{padding:28px}@media(max-width:700px){header{padding:10px 12px;min-height:62px}header h1{font-size:16px}header p{display:none}.header-actions .userpill{display:none}.nav{top:62px}.column-settings{grid-template-columns:1fr}.follow-toolbar{grid-template-columns:1fr}.follow-card{grid-template-columns:1fr;gap:10px}.follow-datebox{min-height:0;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;text-align:left}.follow-datebox .ftime{text-align:right;margin-top:0}.follow-actions{border-left:0;border-top:1px solid #e3eaf1;padding:10px 0 0;justify-content:flex-end}.follow-notes{max-width:none}.follow-footer{flex-direction:column;align-items:flex-start}}
-</style><style>
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.contact-card{background:#fff;border:1px solid #e5ebf1;border-radius:15px;padding:14px;box-shadow:0 4px 15px #11395c0c}.contact-type{font-size:10px;font-weight:900;color:#1459a0;background:#e9f2ff;border-radius:15px;padding:5px 8px}.contact-name{font-size:16px;font-weight:900;color:#153d68}.contact-meta{display:grid;gap:5px;margin-top:8px;color:#687386;font-size:12px}.contact-select{width:18px;height:18px}.contact-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.contact-toolbar{display:grid;grid-template-columns:1fr 240px;gap:8px;margin-bottom:12px}@media(max-width:700px){.contact-grid{grid-template-columns:1fr 1fr}.contact-toolbar{grid-template-columns:1fr}}</style><style>
 .deal-toolbar{display:grid;grid-template-columns:1fr 180px;gap:10px;margin:12px 0}
 .deal-cards{display:grid;gap:12px}
 .deal-card{background:#fff;border:1px solid #dbe4ef;border-radius:14px;padding:15px;box-shadow:0 2px 8px rgba(31,61,92,.06)}
@@ -126,32 +126,7 @@ main{grid-column:2;grid-row:1/3;padding:28px 30px;max-width:1500px;width:100%;ma
     position:static !important;
   }
 }
-</style>
-<style id="mitwa-mobile-table-cards">
-@media (max-width:700px){
-  .table-wrap{width:100%;overflow:visible!important;background:transparent!important;border:0!important;box-shadow:none!important}
-  .crm-table{display:block!important;width:100%!important;border:0!important;background:transparent!important;border-collapse:separate!important}
-  .crm-table thead{display:none!important}
-  .crm-table tbody{display:block!important;width:100%!important}
-  .crm-table tbody tr{display:block!important;width:100%!important;margin:0 0 14px!important;padding:14px 14px 12px!important;background:#fff!important;border:1px solid #dbe5f2!important;border-radius:14px!important;box-shadow:0 3px 12px rgba(25,65,110,.08)!important;overflow:hidden!important}
-  .crm-table tbody tr:hover{box-shadow:0 4px 14px rgba(25,65,110,.11)!important}
-  .crm-table tbody td{display:grid!important;grid-template-columns:42% 58%!important;align-items:start!important;width:100%!important;min-width:0!important;padding:8px 0!important;border:0!important;border-bottom:1px solid #edf2f7!important;text-align:right!important;white-space:normal!important;word-break:break-word!important;line-height:1.35!important;background:transparent!important}
-  .crm-table tbody td:last-child{border-bottom:0!important}
-  .crm-table tbody td::before{content:attr(data-label);display:block!important;text-align:left!important;font-weight:700!important;color:#64748b!important;font-size:11px!important;text-transform:uppercase!important;letter-spacing:.35px!important;padding-right:8px!important}
-  .crm-table tbody td .linkish{font-weight:700!important;color:#0b5fc6!important}
-  .crm-table tbody td .muted{font-size:11px!important}
-  .crm-table tbody td[data-label="Actions"]{display:block!important;text-align:left!important;padding-top:12px!important;margin-top:3px!important;border-top:1px solid #e7edf5!important}
-  .crm-table tbody td[data-label="Actions"]::before{display:none!important}
-  .crm-table tbody td[data-label="Actions"] .actions{display:flex!important;flex-wrap:wrap!important;gap:7px!important;justify-content:flex-start!important}
-  .crm-table tbody td[data-label="Actions"] button{min-height:36px!important;padding:8px 11px!important;font-size:12px!important}
-  .crm-table tbody td[data-label="Matching Customers"] .match-count,
-  .crm-table tbody td[data-label="Matching Properties"] .match-count{min-width:34px!important;min-height:30px!important}
-  .crm-table tbody td[data-label="Status"] .badge{display:inline-flex!important}
-  .crm-table tbody td[data-label="Customer / Serial No."] .muted,
-  .crm-table tbody td[data-label="Property / Serial No."] .muted{display:block!important;margin-top:2px!important}
-  .crm-table tbody td[data-label="Owner"]{font-weight:600!important}
-}
-</style>
+</style><style>.favorite-star{border:0;background:transparent;padding:3px 5px;font-size:19px;line-height:1;cursor:pointer;border-radius:7px}.favorite-star:hover{background:#eef5ff}.toolbar select{min-height:40px;border:1px solid #d6dee8;border-radius:10px;padding:0 10px;background:#fff;color:#17324d;font-weight:600}</style>
 </head><body>
 <div id="root"></div>
 <script>
@@ -242,7 +217,7 @@ async function loadAll(){
  state.tableSettings.customers=cs?.visible_columns||['customer','phone','requirement','listing','furnishing','budget','source','status','next_followup','next_visit','matching','actions'];
 }
 function showApp(errorText=''){
- $('root').innerHTML=`<div class="app"><header><div><h1>Mitwa Properties CRM</h1><p>Cloud V3 • Properties • Owners • Customers • Visits • Follow-ups • Deals</p></div><div class="header-actions"><span class="userpill">${esc(state.profile?.name||state.user?.email||'User')} • ${esc(state.profile?.role||'agent')}</span><button class="secondary" onclick="logout()">Sign Out</button></div></header><div class="nav"><button class="active" onclick="page('dashboard',this)">Dashboard</button><button onclick="page('properties',this)">Properties</button><button onclick="page('owners',this)">Owners</button><button onclick="page('clients',this)">Customers</button><button onclick="page('visits',this)">Site Visits</button><button onclick="page('followups',this)">Follow-ups</button>${String(state.profile?.role||'').toLowerCase()==='admin'?'<button onclick="page(\'deals\',this)">Deals</button>':''}<button onclick="page('agents',this)">Agents</button>${String(state.profile?.role||'').toLowerCase()==='admin'?'<button onclick="page(\'employees\',this)">Employees</button>':''}</div><main>
+ $('root').innerHTML=`<div class="app"><header><div><h1>Mitwa Properties CRM</h1><p>Cloud V3 • Properties • Owners • Customers • Visits • Follow-ups • Deals</p></div><div class="header-actions"><span class="userpill">${esc(state.profile?.name||state.user?.email||'User')} • ${esc(state.profile?.role||'agent')}</span><button class="secondary" onclick="logout()">Sign Out</button></div></header><div class="nav"><button class="active" onclick="page('dashboard',this)">Dashboard</button><button onclick="page('properties',this)">Properties</button><button onclick="page('owners',this)">Owners</button><button onclick="page('clients',this)">Customers</button><button onclick="page('contacts',this)">Contacts</button><button onclick="page('visits',this)">Site Visits</button><button onclick="page('followups',this)">Follow-ups</button>${String(state.profile?.role||'').toLowerCase()==='admin'?'<button onclick="page(\'deals\',this)">Deals</button>':''}<button onclick="page('agents',this)">Agents</button>${String(state.profile?.role||'').toLowerCase()==='admin'?'<button onclick="page(\'employees\',this)">Employees</button>':''}</div><main>
 <section id="dashboard" class="page active">
 <div class="dash-top"><div class="dash-welcome"><h2>Welcome back, ${esc(state.profile?.name||'User')} 👋</h2><p>Your real-estate business at a glance.</p></div><div class="dash-actions"><button class="primary" onclick="openClient()">+ Customer</button><button class="primary" onclick="openProperty()">+ Property</button><button class="primary" onclick="openVisitSchedule()">+ Site Visit</button></div></div>
 <div class="cards dash-kpis"><div class="card"><small>Total Properties</small><div class="amount" id="sP">0</div></div><div class="card"><small>Available Properties</small><div class="amount" id="sA">0</div></div><div class="card"><small>Owners</small><div class="amount" id="sO">0</div></div><div class="card"><small>Customers</small><div class="amount" id="sC">0</div></div><div class="card"><small>Upcoming Visits</small><div class="amount" id="sV">0</div></div><div class="card"><small>Pending Follow-ups</small><div class="amount" id="sF">0</div></div>${String(state.profile?.role||'').toLowerCase()==='admin'?'<div class="card"><small>Open Deals</small><div class="amount" id="sD">0</div></div>':''}<div class="card"><small>Active Agents</small><div class="amount" id="sAg">0</div></div>${String(state.profile?.role||'').toLowerCase()==='admin'?'<div class="card"><small>Brokerage Received</small><div class="amount" id="sBR">₹0</div></div><div class="card"><small>Brokerage Pending</small><div class="amount" id="sBP">₹0</div></div><div class="card"><small>Incentive Earned</small><div class="amount" id="sIE">₹0</div></div>':''}</div>
@@ -251,7 +226,8 @@ function showApp(errorText=''){
 </section>
 <section id="properties" class="page"><div class="section"><h2>Properties</h2><div class="actions"><button class="secondary" onclick="openPropertyTableSettings()">⚙️ Table Settings</button><button class="primary" onclick="openProperty()">+ Add Property</button></div></div><div class="toolbar"><input id="ps" placeholder="Search complex name, wing/unit..." oninput="render()"></div><div id="plist"></div></section>
 <section id="owners" class="page"><div class="section"><h2>Property Owners</h2><button class="primary" onclick="openOwner()">+ Add Owner</button></div><div class="toolbar"><input id="os" placeholder="Search owner name..." oninput="render()"></div><div id="olist"></div></section>
-<section id="clients" class="page"><div class="section"><h2>Customers</h2><div class="actions"><button class="secondary" onclick="openCustomerTableSettings()">⚙️ Table Settings</button><button class="primary" onclick="openClient()">+ Add Customer</button></div></div><div class="toolbar"><input id="cs" placeholder="Search customer name or phone..." oninput="render()"></div><div id="clist"></div></section>
+<section id="clients" class="page"><div class="section"><h2>Customers</h2><div class="actions"><button class="secondary" onclick="openCustomerTableSettings()">⚙️ Table Settings</button><button class="primary" onclick="openClient()">+ Add Customer</button></div></div><div class="toolbar"><input id="cs" placeholder="Search customer name or phone..." oninput="render()"><select id="customerPriorityFilter" onchange="render()"><option value="all">All Customers</option><option value="favorite">⭐ Favorites</option><option value="Hot">🔴 Hot</option><option value="Warm">🟡 Warm</option><option value="Cold">⚪ Cold</option></select></div><div id="clist"></div></section>
+<section id="contacts" class="page"><div class="section"><h2>Contacts</h2><div class="actions">${isAdmin()?'<button class="secondary" onclick="openContactExcelImport()">📥 Import Excel</button><button class="secondary" onclick="exportContactsExcel()">📤 Export Excel</button>':''}<button class="primary" onclick="openContactShare()">📲 Share Property</button></div></div><div class="toolbar"><input id="contactsSearch" placeholder="Search name, phone, email..." oninput="render()"><select id="contactsTypeFilter" onchange="render()"><option value="all">All Contacts</option><option value="Customer">Customers</option><option value="Owner">Owners</option><option value="Agent">Agents</option><option value="Employee">Employees</option></select></div><div id="contactsList"></div></section>
 <section id="visits" class="page"><div class="section"><h2>Site Visits</h2><button class="primary" onclick="openVisitSchedule()">+ New Visit Schedule</button></div><div class="visit-toolbar"><input id="vs" placeholder="Search customer, agent, property, date..." oninput="render()"><select id="visitDateFilter" class="visit-filter" onchange="render()"><option value="all">All dates</option><option value="upcoming">Upcoming visits</option><option value="today">Today</option><option value="past">Past visits</option></select></div><div id="vlist"></div></section>
 <section id="followups" class="page"><div class="section"><h2>Follow-ups</h2><button class="primary" onclick="openFollowup()">+ Add Follow-up</button></div><div class="follow-toolbar"><input id="fs" placeholder="Search customer, agent, phone, notes..." oninput="render()"><select id="followFilter" onchange="render()"><option value="all">All follow-ups</option><option value="today">Today</option><option value="upcoming">Upcoming</option><option value="overdue">Overdue</option><option value="completed">Completed</option><option value="cancelled">Cancelled</option></select></div><div id="flist"></div></section>
 <section id="deals" class="page"><div class="section"><h2>Deals & Brokerage</h2><button class="primary" onclick="openDeal()">+ Add Deal</button></div><div class="deal-toolbar"><input id="ds" placeholder="Search customer, property, owner, agent..." oninput="render()"><select id="dealFilter" onchange="render()"><option value="all">All deals</option><option value="open">Open deals</option><option value="closed">Closed</option><option value="cancelled">Cancelled</option></select></div><div id="dlist"></div></section>
@@ -297,7 +273,7 @@ function openClientSummary(id){
  const followHtml=fups.map(f=>`<div class="timeline-item"><div class="row"><b>${esc(f.mode||'Follow-up')}</b><span class="muted">${esc(f.followup_date||'—')}${f.followup_time?' · '+esc(f.followup_time):''}</span></div><div class="muted">${esc(f.status||'Pending')}${f.notes?' · '+oneline(f.notes):''}</div></div>`).join('')||'<div class="empty">No follow-ups recorded.</div>';
  const leadHtml='';
  const dealHtml=deals.map(d=>`<tr><td>${oneline(pname(d.property_id))}</td><td>${esc(d.status||'—')}</td><td>${money(d.final_price)}</td><td>${esc(d.deal_date||'—')}</td></tr>`).join('')||'<tr><td colspan="4" class="muted">No deals linked.</td></tr>';
- modal('Customer Summary',`<div class="summary-head"><div class="row"><div><div class="muted">${oneline(c.client_id)}</div><h2 style="margin:3px 0 4px">${oneline(c.name)}</h2><div class="muted">${oneline(c.mobile)}${c.email?' · '+oneline(c.email):''}</div></div><div>${clientStatusBadge(c.status)}</div></div><div class="actions" style="margin-top:12px"><button class="secondary" onclick="openClient('${c.id}')">Edit Customer</button><button class="secondary" onclick="closeModal()">Close</button></div></div><div class="summary-grid"><div class="summary-stat"><small>Requirement</small><b>${oneline(clientRequirement(c))}</b></div><div class="summary-stat"><small>Listing</small><b>${oneline(c.listing_type||'Any')}</b></div><div class="summary-stat"><small>Budget</small><b>${oneline(clientBudget(c))}</b></div><div class="summary-stat"><small>Purpose</small><b>${oneline(c.purpose||'—')}</b></div><div class="summary-stat"><small>Source</small><b>${oneline(source)}</b></div><div class="summary-stat"><small>Next Follow-up</small><b>${nextFollow?esc(nextFollow.followup_date):esc(latestLead?.next_followup||'—')}</b></div><div class="summary-stat"><small>Next Visit</small><b>${next?esc(shortDate(next)):'—'}</b></div><div class="summary-stat"><small>Last Visit</small><b>${last?esc(shortDate(last)):'—'}</b></div><div class="summary-stat"><small>Properties Viewed</small><b>${props.length}</b></div><div class="summary-stat"><small>Visits</small><b>${groups.length}</b></div></div><div class="summary-section"><h3>Properties Viewed</h3>${props.length?'<div class="actions">'+props.map(p=>`<span class="badge">${oneline(p)}</span>`).join('')+'</div>':'<div class="empty">No properties viewed yet.</div>'}</div><div class="summary-section"><h3>Site Visit History</h3>${visitHtml}</div><div class="summary-section"><h3>Follow-ups</h3>${followHtml}</div>${isAdmin()?`<div class="summary-section"><h3>Deals</h3><div class="table-wrap"><table class="mini-table"><thead><tr><th>Property</th><th>Status</th><th>Final Price</th><th>Deal Date</th></tr></thead><tbody>${dealHtml}</tbody></table></div></div>`:''}`);
+ modal('Customer Summary',`<div class="summary-head"><div class="row"><div><div class="muted">${oneline(c.client_id)}</div><h2 style="margin:3px 0 4px">${oneline(c.name)}</h2><div class="muted">${oneline(c.mobile)}${c.email?' · '+oneline(c.email):''}</div></div><div>${c.is_favorite?'⭐ ':''}${clientStatusBadge(c.status)}${c.priority?` <span style="margin-left:6px">${priorityBadge(c.priority)}</span>`:''}</div></div><div class="actions" style="margin-top:12px"><button class="secondary" onclick="openClient('${c.id}')">Edit Customer</button><button class="secondary" onclick="closeModal()">Close</button></div></div><div class="summary-grid"><div class="summary-stat"><small>Requirement</small><b>${oneline(clientRequirement(c))}</b></div><div class="summary-stat"><small>Listing</small><b>${oneline(c.listing_type||'Any')}</b></div><div class="summary-stat"><small>Budget</small><b>${oneline(clientBudget(c))}</b></div><div class="summary-stat"><small>Purpose</small><b>${oneline(c.purpose||'—')}</b></div><div class="summary-stat"><small>Source</small><b>${oneline(source)}</b></div><div class="summary-stat"><small>Next Follow-up</small><b>${nextFollow?esc(nextFollow.followup_date):esc(latestLead?.next_followup||'—')}</b></div><div class="summary-stat"><small>Next Visit</small><b>${next?esc(shortDate(next)):'—'}</b></div><div class="summary-stat"><small>Last Visit</small><b>${last?esc(shortDate(last)):'—'}</b></div><div class="summary-stat"><small>Properties Viewed</small><b>${props.length}</b></div><div class="summary-stat"><small>Visits</small><b>${groups.length}</b></div></div><div class="summary-section"><h3>Properties Viewed</h3>${props.length?'<div class="actions">'+props.map(p=>`<span class="badge">${oneline(p)}</span>`).join('')+'</div>':'<div class="empty">No properties viewed yet.</div>'}</div><div class="summary-section"><h3>Site Visit History</h3>${visitHtml}</div><div class="summary-section"><h3>Follow-ups</h3>${followHtml}</div>${isAdmin()?`<div class="summary-section"><h3>Deals</h3><div class="table-wrap"><table class="mini-table"><thead><tr><th>Property</th><th>Status</th><th>Final Price</th><th>Deal Date</th></tr></thead><tbody>${dealHtml}</tbody></table></div></div>`:''}`);
 }
 function renderModernDashboard(){
  const pending=state.followups.filter(x=>x.status==='Pending').sort((a,b)=>(String(a.followup_date||'9999')+' '+String(a.followup_time||'99')).localeCompare(String(b.followup_date||'9999')+' '+String(b.followup_time||'99'))).slice(0,5);
@@ -338,21 +314,56 @@ function openMatchingCustomers(pId){const p=state.properties.find(x=>x.id===pId)
 function openPropertyTableSettings(){if(!isAdmin())return alert('Only Admin can change Property table settings.');const selected=new Set(propertyColumns());modal('Property Table Settings',`<div class="hint">Select the columns you want everyone to see in the Property table. Only Admin can change this setting.</div><div class="column-settings">${PROPERTY_COLUMNS.map(c=>`<label class="setting-check"><input type="checkbox" value="${c.key}" ${selected.has(c.key)?'checked':''} ${c.key==='actions'?'disabled':''}> <span>${c.label}</span></label>`).join('')}</div><div class="form-actions"><button class="secondary" onclick="closeModal()">Cancel</button><button class="primary" onclick="savePropertyTableSettings()">Save Settings</button></div>`)}
 async function savePropertyTableSettings(){if(!isAdmin())return;const cols=[...document.querySelectorAll('.column-settings input:checked')].map(x=>x.value);if(!cols.includes('property'))cols.unshift('property');if(!cols.includes('actions'))cols.push('actions');try{const {data,error}=await sb.from('crm_table_settings').upsert({table_name:'properties',visible_columns:cols,updated_by:state.user.id,updated_at:new Date().toISOString()},{onConflict:'table_name'}).select().single();if(error)throw error;state.tableSettings.properties=data.visible_columns;closeModal();render();alert('Property table settings saved successfully.')}catch(e){alert('Could not save table settings: '+e.message)}}
 const CUSTOMER_COLUMNS=[
- {key:'customer',label:'Customer / Serial No.'},{key:'phone',label:'Phone'},{key:'requirement',label:'Requirement'},{key:'listing',label:'Listing'},{key:'furnishing',label:'Furnishing'},{key:'budget',label:'Budget'},{key:'source',label:'Source'},{key:'status',label:'Status'},{key:'next_followup',label:'Next Follow-up'},{key:'next_visit',label:'Next Visit'},{key:'matching',label:'Matching Properties'},{key:'actions',label:'Actions'}
+ {key:'favorite',label:'⭐'},{key:'customer',label:'Customer / Serial No.'},{key:'phone',label:'Phone'},{key:'requirement',label:'Requirement'},{key:'listing',label:'Listing'},{key:'furnishing',label:'Furnishing'},{key:'budget',label:'Budget'},{key:'source',label:'Source'},{key:'status',label:'Status'},{key:'priority',label:'Priority'},{key:'next_followup',label:'Next Follow-up'},{key:'next_visit',label:'Next Visit'},{key:'matching',label:'Matching Properties'},{key:'actions',label:'Actions'}
 ];
 function customerColumns(){return Array.isArray(state.tableSettings.customers)&&state.tableSettings.customers.length?state.tableSettings.customers:CUSTOMER_COLUMNS.map(c=>c.key)}
 function openCustomerTableSettings(){if(!isAdmin())return alert('Only Admin can change Customer table settings.');const selected=new Set(customerColumns());modal('Customer Table Settings',`<div class=hint>Select the columns you want everyone to see in the Customer table. Only Admin can change this setting.</div><div class=column-settings>${CUSTOMER_COLUMNS.map(c=>`<label class=setting-check><input type=checkbox value="${c.key}" ${selected.has(c.key)?'checked':''} ${c.key==='actions'?'disabled':''}> <span>${c.label}</span></label>`).join('')}</div><div class=form-actions><button class=secondary onclick=closeModal()>Cancel</button><button class=primary onclick=saveCustomerTableSettings()>Save Settings</button></div>`)}
 async function saveCustomerTableSettings(){if(!isAdmin())return;const cols=[...document.querySelectorAll('.column-settings input:checked')].map(x=>x.value);if(!cols.includes('customer'))cols.unshift('customer');if(!cols.includes('actions'))cols.push('actions');try{const {data,error}=await sb.from('crm_table_settings').upsert({table_name:'customers',visible_columns:cols,updated_by:state.user.id,updated_at:new Date().toISOString()},{onConflict:'table_name'}).select().single();if(error)throw error;state.tableSettings.customers=data.visible_columns;closeModal();render();alert('Customer table settings saved successfully.')}catch(e){alert('Could not save Customer table settings: '+e.message)}}
-function renderCustomerTable(a){const cols=customerColumns();const th=cols.map(k=>`<th>${CUSTOMER_COLUMNS.find(c=>c.key===k)?.label||k}</th>`).join('');$('clist').innerHTML=a.length?`<div class=table-wrap><table class=crm-table><thead><tr>${th}</tr></thead><tbody>${a.map(c=>{const next=clientNextVisit(c.id),f=state.followups.filter(x=>(x.followup_type||'Client')==='Client'&&x.client_id===c.id&&x.status==='Pending').sort((x,y)=>String(x.followup_date||'').localeCompare(String(y.followup_date||'')))[0],mp=matchingProperties(c).length;return `<tr onclick="openClientSummary('${c.id}')">${cols.map(k=>{if(k==='customer')return `<td><span class=linkish>${oneline(c.name)}</span><div class=muted>${oneline(c.client_id)}</div></td>`;if(k==='phone')return `<td>${oneline(c.mobile)}</td>`;if(k==='requirement')return `<td>${oneline(clientRequirement(c))}</td>`;if(k==='listing')return `<td>${oneline(c.listing_type||'Any')}</td>`;if(k==='furnishing')return `<td>${oneline(c.furnishing||'—')}</td>`;if(k==='budget')return `<td>${oneline(clientBudget(c))}</td>`;if(k==='source')return `<td>${oneline(c.source||'—')}</td>`;if(k==='status')return `<td>${clientStatusBadge(c.status)}</td>`;if(k==='next_followup')return `<td>${esc(f?.followup_date||'—')}</td>`;if(k==='next_visit')return `<td>${next?esc(shortDate(next)):'—'}</td>`;if(k==='matching')return `<td><button class=match-count onclick="event.stopPropagation();openMatchingProperties('${c.id}')">${mp}</button></td>`;if(k==='actions')return `<td onclick="event.stopPropagation()"><div class=actions><button class=secondary onclick="openClientSummary('${c.id}')">View</button><button class=secondary onclick="openClient('${c.id}')">Edit</button><button class=secondary onclick="openMatchingProperties('${c.id}')">Matches</button><button class=secondary onclick="shareMatchingProperties('${c.id}')">📲</button><button class="danger delete-action" onclick="delRecord('clients','${c.id}')">Delete</button></div></td>`;return '<td>—</td>'}).join('')}</tr>`}).join('')}</tbody></table></div>`:'<div class=empty>No customers found.</div>'}
+function priorityBadge(v){const p=String(v||'').trim();if(!p)return '<span class=muted>—</span>';const cls=p==='Hot'?'bad':(p==='Warm'?'warn':'');return `<span class="badge ${cls}">${p==='Hot'?'🔴':p==='Warm'?'🟡':'⚪'} ${esc(p)}</span>`}
+async function toggleCustomerFavorite(id){const c=state.clients.find(x=>x.id===id);if(!c)return;const next=!Boolean(c.is_favorite);try{const {data,error}=await sb.from('clients').update({is_favorite:next}).eq('id',id).select().single();if(error)throw error;Object.assign(c,data||{is_favorite:next});render()}catch(e){alert('Could not update Favorite: '+e.message)}}
+function customerPriorityFilter(){return $('customerPriorityFilter')?.value||'all'}
+function customerFilterMatches(c){const f=customerPriorityFilter();if(f==='favorite'&&!c.is_favorite)return false;if(['Hot','Warm','Cold'].includes(f)&&String(c.priority||'')!==f)return false;return true}
+
+function renderCustomerTable(a){const cols=customerColumns();const th=cols.map(k=>`<th>${CUSTOMER_COLUMNS.find(c=>c.key===k)?.label||k}</th>`).join('');$('clist').innerHTML=a.length?`<div class=table-wrap><table class=crm-table><thead><tr>${th}</tr></thead><tbody>${a.map(c=>{const next=clientNextVisit(c.id),f=state.followups.filter(x=>(x.followup_type||'Client')==='Client'&&x.client_id===c.id&&x.status==='Pending').sort((x,y)=>String(x.followup_date||'').localeCompare(String(y.followup_date||'')))[0],mp=matchingProperties(c).length;return `<tr onclick="openClientSummary('${c.id}')">${cols.map(k=>{if(k==='favorite')return `<td><button type=button class="favorite-star" title="${c.is_favorite?'Remove Favorite':'Mark Favorite'}" onclick="event.stopPropagation();toggleCustomerFavorite('${c.id}')">${c.is_favorite?'⭐':'☆'}</button></td>`;if(k==='customer')return `<td><span class=linkish>${oneline(c.name)}</span><div class=muted>${oneline(c.client_id)}</div></td>`;if(k==='phone')return `<td>${oneline(c.mobile)}</td>`;if(k==='requirement')return `<td>${oneline(clientRequirement(c))}</td>`;if(k==='listing')return `<td>${oneline(c.listing_type||'Any')}</td>`;if(k==='furnishing')return `<td>${oneline(c.furnishing||'—')}</td>`;if(k==='budget')return `<td>${oneline(clientBudget(c))}</td>`;if(k==='source')return `<td>${oneline(c.source||'—')}</td>`;if(k==='status')return `<td>${clientStatusBadge(c.status)}</td>`;if(k==='priority')return `<td>${priorityBadge(c.priority)}</td>`;if(k==='next_followup')return `<td>${esc(f?.followup_date||'—')}</td>`;if(k==='next_visit')return `<td>${next?esc(shortDate(next)):'—'}</td>`;if(k==='matching')return `<td><button class=match-count onclick="event.stopPropagation();openMatchingProperties('${c.id}')">${mp}</button></td>`;if(k==='actions')return `<td onclick="event.stopPropagation()"><div class=actions><button class=secondary onclick="openClientSummary('${c.id}')">View</button><button class=secondary onclick="openClient('${c.id}')">Edit</button><button class=secondary onclick="openMatchingProperties('${c.id}')">Matches</button><button class=secondary onclick="shareMatchingProperties('${c.id}')">📲</button><button class="danger delete-action" onclick="delRecord('clients','${c.id}')">Delete</button></div></td>`;return '<td>—</td>'}).join('')}</tr>`}).join('')}</tbody></table></div>`:'<div class=empty>No customers found.</div>'}
 
 function renderPropertyTable(a){const cols=propertyColumns();const th=cols.map(k=>`<th>${PROPERTY_COLUMNS.find(c=>c.key===k)?.label||k}</th>`).join('');$('plist').innerHTML=a.length?`<div class="table-wrap"><table class="crm-table"><thead><tr>${th}</tr></thead><tbody>${a.map(p=>{const next=propertyNextVisit(p.id),mc=matchingCustomers(p).length;return `<tr onclick="openPropertySummary('${p.id}')">${cols.map(k=>{if(k==='property')return `<td><span class="linkish">${oneline(p.building_name||p.property_type||'Property')}</span><div class=muted>${oneline(p.property_id)}</div></td>`;if(k==='complex')return `<td>${oneline(p.building_name||'—')}</td>`;if(k==='unit')return `<td>${oneline(p.unit_number||'—')}</td>`;if(k==='type')return `<td>${oneline(p.bhk||p.property_type||'—')}</td>`;if(k==='listing')return `<td>${oneline(p.listing_type||'Sale')}</td>`;if(k==='furnishing')return `<td>${oneline(p.furnishing||'—')}</td>`;if(k==='price')return `<td>${oneline(propertyPrice(p))}</td>`;if(k==='next_visit')return `<td>${next?esc(shortDate(next)):'—'}</td>`;if(k==='matching')return `<td><button class="match-count" onclick="event.stopPropagation();openMatchingCustomers('${p.id}')">${mc}</button></td>`;if(k==='owner')return `<td>${oneline(oname(p.owner_id))}</td>`;if(k==='status')return `<td>${propertyStatusBadge(p.status)}</td>`;if(k==='actions')return `<td onclick="event.stopPropagation()"><div class=actions><button class=secondary onclick="openPropertySummary('${p.id}')">View</button><button class=secondary onclick="openProperty('${p.id}')">Edit</button><button class=secondary onclick="sharePropertyWhatsApp('${p.id}')">📲</button><button class=secondary onclick="openMatchingCustomers('${p.id}')">Matches</button><button class="danger delete-action" onclick="delRecord('properties','${p.id}')">Delete</button></div></td>`;return '<td>—</td>'}).join('')}</tr>`}).join('')}</tbody></table></div>`:'<div class=empty>No properties found.</div>'}
 
+function contactRecords(){
+ const out=[];
+ state.clients.forEach(x=>out.push({id:x.id,type:'Customer',name:x.name||'',mobile:x.mobile||'',whatsapp:x.whatsapp||x.mobile||'',email:x.email||'',source:x.source||'',status:x.status||'',favorite:!!x.is_favorite,ref:x}));
+ state.owners.forEach(x=>out.push({id:x.id,type:'Owner',name:x.name||'',mobile:x.mobile||'',whatsapp:x.whatsapp||x.mobile||'',email:x.email||'',source:'Owner',status:'',favorite:false,ref:x}));
+ state.agents.forEach(x=>out.push({id:x.id,type:'Agent',name:x.name||'',mobile:x.mobile||'',whatsapp:x.whatsapp||x.mobile||'',email:x.email||'',source:x.company||'Agent',status:x.active?'Active':'Inactive',favorite:false,ref:x}));
+ if(isAdmin())state.employees.forEach(x=>out.push({id:x.id,type:'Employee',name:x.name||'',mobile:x.phone||x.mobile||'',whatsapp:x.phone||x.mobile||'',email:x.email||'',source:x.designation||'Employee',status:x.status||'',favorite:false,ref:x}));
+ return out;
+}
+function contactPhone(v){let n=String(v||'').replace(/\D/g,'');if(n.length===10)n='91'+n;return n}
+function contactWa(c,msgText=''){const n=contactPhone(c.whatsapp||c.mobile);if(!n)return alert('No WhatsApp/mobile number available for this contact.');window.open('https://wa.me/'+n+'?text='+encodeURIComponent(msgText),'_blank');}
+function contactShareText(p){return `🏠 *Mitwa Properties*\n\n${p.building_name||p.property_type||'Property'}${p.bhk?' · '+p.bhk:''}\n${p.location||p.address||''}\n${p.listing_type||'Sale'} · ${propertyPrice(p)}\n\nPlease contact us if you would like to schedule a site visit.\n\nMitwa Properties`;}
+function renderContacts(){
+ const q=($('contactsSearch')?.value||'').trim().toLowerCase(), f=$('contactsTypeFilter')?.value||'all';
+ const a=contactRecords().filter(c=>(f==='all'||c.type===f)&&(!q||(c.name+' '+c.mobile+' '+c.email+' '+c.source).toLowerCase().includes(q)));
+ const list=$('contactsList');if(!list)return;
+ list.innerHTML=a.length?`<div class="contact-grid">${a.map(c=>`<div class="contact-card"><div class="row"><label><input class="contact-select" type="checkbox" value="${esc(c.type)}|${esc(c.id)}"></label><span class="contact-type">${esc(c.type)}</span>${c.favorite?'<span title="Favorite">⭐</span>':''}</div><div class="contact-name" style="margin-top:9px">${oneline(c.name)}</div><div class="contact-meta"><div>📞 ${oneline(c.mobile||'—')}</div><div>💬 ${oneline(c.whatsapp||'—')}</div><div>✉️ ${oneline(c.email||'—')}</div><div>🏷️ ${oneline(c.source||'—')}</div></div><div class="contact-actions"><button class="secondary" onclick="contactSingleWhatsApp('${c.type}','${c.id}')">📲 WhatsApp</button>${c.type==='Customer'?`<button class="secondary" onclick="openClientSummary('${c.id}')">View</button>`:c.type==='Owner'?`<button class="secondary" onclick="openOwnerSummary('${c.id}')">View</button>`:''}</div></div>`).join('')}</div>`:'<div class="empty">No contacts found.</div>';
+}
+function getContact(type,id){return contactRecords().find(c=>c.type===type&&c.id===id)}
+function contactSingleWhatsApp(type,id){const c=getContact(type,id);if(!c)return;contactWa(c,`Hello ${c.name||''},\n\nRegards,\nMitwa Properties`)}
+function openContactShare(){
+ const props=state.properties.filter(p=>!['Sold','Rented'].includes(p.status));
+ modal('Share Property to Contacts',`<div class="field"><label>Property</label><select id="sharePropertySelect"><option value="">— Select property —</option>${props.map(p=>`<option value="${p.id}">${esc(p.building_name||p.property_type||'Property')} · ${esc(p.bhk||p.property_type||'')} · ${esc(p.location||'')} · ${esc(propertyPrice(p))}</option>`).join('')}</select></div><div class="hint">Select contacts on the Contacts page first, then use this action. Or choose a property here and select contacts below.</div><div class="field"><label>Contacts</label><div id="shareContactPick" class="match-list">${contactRecords().map(c=>`<label class="setting-check"><input type="checkbox" value="${esc(c.type)}|${esc(c.id)}" class="share-contact-check"><span>${esc(c.type)} · ${esc(c.name)} · ${esc(c.mobile||'')}</span></label>`).join('')}</div></div><div class="form-actions"><button class="secondary" onclick="closeModal()">Cancel</button><button class="primary" onclick="shareSelectedContacts()">📲 Share</button></div>`)
+}
+function shareSelectedContacts(){const pid=$('sharePropertySelect')?.value;if(!pid)return alert('Select a property first.');const p=state.properties.find(x=>x.id===pid);if(!p)return;const selected=[...document.querySelectorAll('.share-contact-check:checked')].map(x=>x.value).map(v=>{const [t,id]=v.split('|');return getContact(t,id)}).filter(Boolean);if(!selected.length)return alert('Select at least one contact.');const text=contactShareText(p);selected.forEach((c,i)=>setTimeout(()=>contactWa(c,text),i*350));closeModal()}
+function selectedContactKeys(){return [...document.querySelectorAll('.contact-select:checked')].map(x=>x.value)}
+function openContactExcelImport(){if(!isAdmin())return;modal('Import Contacts from Excel',`<div class="hint">For safety, import updates existing Customers/Owners/Agents by matching <b>Type + ID</b>. Employees cannot be imported. The Excel file should contain columns: Type, ID, Name, Mobile, WhatsApp, Email, Source, Status.</div><div class="field"><input id="contactExcelFile" type="file" accept=".xlsx,.xls,.csv"></div><div class="form-actions"><button class="secondary" onclick="closeModal()">Cancel</button><button class="primary" onclick="importContactsExcel()">Import</button></div>`)}
+async function ensureXlsx(){if(window.XLSX)return true;await new Promise((resolve,reject)=>{const s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js';s.onload=resolve;s.onerror=reject;document.head.appendChild(s)});return true}
+async function exportContactsExcel(){if(!isAdmin())return;try{await ensureXlsx();const rows=contactRecords().map(c=>({Type:c.type,ID:c.id,Name:c.name,Mobile:c.mobile,WhatsApp:c.whatsapp,Email:c.email,Source:c.source,Status:c.status,Favorite:c.favorite?'Yes':'No'}));const ws=XLSX.utils.json_to_sheet(rows);const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,'Contacts');XLSX.writeFile(wb,'Mitwa_Contacts.xlsx')}catch(e){alert('Could not export Excel: '+(e.message||e))}}
+async function importContactsExcel(){if(!isAdmin())return;const file=$('contactExcelFile')?.files?.[0];if(!file)return alert('Select an Excel file first.');try{await ensureXlsx();const data=await file.arrayBuffer();const wb=XLSX.read(data,{type:'array'}),ws=wb.Sheets[wb.SheetNames[0]],rows=XLSX.utils.sheet_to_json(ws);let updated=0,skipped=0;for(const r of rows){const type=String(r.Type||'').trim(),id=String(r.ID||'').trim();if(!id||!['Customer','Owner','Agent'].includes(type)){skipped++;continue}const table=type==='Customer'?'clients':type==='Owner'?'owners':'agents';const payload=type==='Customer'?{name:r.Name,mobile:r.Mobile,whatsapp:r.WhatsApp,email:r.Email,source:r.Source,status:r.Status,is_favorite:String(r.Favorite||'').toLowerCase()==='yes'}:type==='Owner'?{name:r.Name,mobile:r.Mobile,whatsapp:r.WhatsApp,email:r.Email}: {name:r.Name,mobile:r.Mobile,whatsapp:r.WhatsApp,company:r.Source,active:String(r.Status||'').toLowerCase()!=='inactive'};const {error}=await sb.from(table).update(payload).eq('id',id);if(error)skipped++;else updated++}await loadAll();closeModal();render();alert(`Import complete. Updated: ${updated}. Skipped: ${skipped}.`)}catch(e){alert('Could not import Excel: '+(e.message||e))}}
 function render(){
  if(!$('sP'))return;
  $('sP').textContent=state.properties.length;$('sA').textContent=state.properties.filter(x=>x.status==='Available').length;$('sO').textContent=state.owners.length;$('sC').textContent=state.clients.length;$('sV').textContent=state.visits.filter(x=>x.status!=='Cancelled').length;$('sF').textContent=state.followups.filter(x=>x.status==='Pending').length;if($('sD'))$('sD').textContent=state.deals.filter(x=>x.status!=='Cancelled').length;$('sAg').textContent=state.agents.length;if(isAdmin()){const totalB=state.deals.reduce((s,d)=>s+Number(d.total_brokerage??d.brokerage_amount??0),0);const received=state.brokerage_payments.reduce((s,p)=>s+Number(p.amount||0),0);const pending=Math.max(0,totalB-received);const incentive=state.deals.reduce((s,d)=>s+dealReceived(d.id)*(Number(d.incentive_percentage||0)/100),0);if($('sBR'))$('sBR').textContent=money(received);if($('sBP'))$('sBP').textContent=money(pending);if($('sIE'))$('sIE').textContent=money(incentive);}
  let q=($('ps')?.value||'').trim().toLowerCase();a=state.properties.filter(x=>(String(x.building_name||'')+' '+String(x.unit_number||'')+' '+String(x.location||'')+' '+String(x.property_id||'')).toLowerCase().includes(q));renderPropertyTable(a);
  q=($('os')?.value||'').trim().toLowerCase();a=state.owners.filter(x=>String(x.name||'').toLowerCase().includes(q));$('olist').innerHTML=a.length?`<div class="table-wrap"><table class="crm-table"><thead><tr><th>Owner</th><th>Phone</th><th>Email</th><th>Properties</th><th>Next Visit</th><th>Last Visit</th><th>Actions</th></tr></thead><tbody>${a.map(o=>{const props=ownerProperties(o.id),next=ownerNextVisit(o.id),last=ownerLastVisit(o.id);return `<tr onclick="openOwnerSummary('${o.id}')"><td><span class="linkish">${oneline(o.name)}</span><div class=muted>${oneline(o.owner_id)}</div></td><td>${oneline(o.mobile)}</td><td>${oneline(o.email||'—')}</td><td>${props.length}</td><td>${next?esc(shortDate(next)):'—'}</td><td>${last?esc(shortDate(last)):'—'}</td><td onclick="event.stopPropagation()"><div class=actions><button class=secondary onclick="openOwnerSummary('${o.id}')">View</button><button class=secondary onclick="openOwner('${o.id}')">Edit</button><button class="danger delete-action" onclick="delOwner('${o.id}')">Delete</button></div></td></tr>`}).join('')}</tbody></table></div>`:'<div class=empty>No owners found.</div>';
- q=($('cs')?.value||'').trim().toLowerCase();a=state.clients.filter(x=>(String(x.name||'')+' '+String(x.mobile||'')).toLowerCase().includes(q));renderCustomerTable(a);
+ q=($('cs')?.value||'').trim().toLowerCase();a=state.clients.filter(x=>(String(x.name||'')+' '+String(x.mobile||'')).toLowerCase().includes(q)&&customerFilterMatches(x));renderCustomerTable(a);
+ renderContacts();
  let f=state.followups.filter(x=>x.status==='Pending').sort((a,b)=>String(a.followup_date).localeCompare(String(b.followup_date))).slice(0,6);$('dashFollow').innerHTML=f.map(x=>{const who=x.followup_type==='Agent'?agentName(x.agent_id):cname(x.client_id);return `<div class="item ${x.followup_date<today()?'overdue':''}"><div class=row><div><b>${oneline(who)}</b><div class=muted>${esc(x.followup_type||'Client')} · ${esc(x.followup_date)} · ${esc(x.mode)}</div></div><button class=secondary onclick="doneF('${x.id}')">Mark Done</button></div></div>`}).join('')||'<div class=empty>No pending follow-ups.</div>';
  let act=[...state.visits.slice(-3).map(x=>'Site visit: '+cname(x.client_id)+' — '+visitPropertyLabel(x)+' — '+x.visit_date),...state.deals.slice(-3).map(x=>'Deal: '+cname(x.client_id)+' — '+pname(x.property_id)+' — '+x.status)];$('activity').innerHTML=act.slice(-7).reverse().map(x=>`<div class=item muted>${esc(x)}</div>`).join('')||'<div class=empty>No activity yet.</div>';
  if(isAdmin()){
@@ -456,7 +467,7 @@ function renderLists(){
 function fields(type,x={}){
   if(type==='property')return `<div class=grid><div><label>Property ID</label><input id=fid value="${esc(x.property_id||('PROP-'+Date.now().toString().slice(-7)))}"></div><div><label>Status</label><select id=fs1><option>Available</option><option>Hold</option><option>Sold</option><option>Rented</option></select></div><div><label>Property Type *</label><select id=fs2 onchange="togglePropertyTypeField()">${['Flat','Villa','House','Plot','Shop','Office','Warehouse','Other'].map(v=>`<option ${v===(x.property_type||'Flat')?'selected':''}>${v}</option>`).join('')}</select></div><div><label>Listing</label><select id=fs3><option ${x.listing_type!=='Rent'?'selected':''}>Sale</option><option ${x.listing_type==='Rent'?'selected':''}>Rent</option></select></div><div><label>Furnishing</label><select id=fsFurn><option value="">Select furnishing</option><option ${x.furnishing==='Furnished'?'selected':''}>Furnished</option><option ${x.furnishing==='Semi-Furnished'?'selected':''}>Semi-Furnished</option><option ${x.furnishing==='Unfurnished'?'selected':''}>Unfurnished</option></select></div><div><label>Complex Name</label><input id=f1 value="${esc(x.building_name)}"></div><div><label>Wing / Unit No.</label><input id=f2 value="${esc(x.unit_number)}"></div><div class=full><label>Address</label><input id=f3 value="${esc(x.address)}"></div><div><label>Location</label><input id=f4 value="${esc(x.location)}"></div><div><label>Area sq.ft.</label><input id=f5 type=number value="${esc(x.area_sqft)}"></div><div id=propertyTypeField><label>Type</label><select id=f6>${['1 RK','1 BHK','1.5 BHK','2 BHK','2.5 BHK','3 BHK','3.5 BHK','4 BHK','4.5 BHK','5 BHK','6 BHK','1 BHK jodi','2+1 BHK jodi','2 BHK jodi','3 BHK jodi','4 BHK jodi','2 BHK duplex','3 BHK duplex','4 BHK duplex','5 BHK duplex','6 BHK duplex'].map(v=>`<option ${v===x.bhk?'selected':''}>${v}</option>`).join('')}</select></div><div><label>Floor</label><input id=f7 value="${esc(x.floor)}"></div><div><label>Asking Price ₹</label><input id=f8 type=number value="${esc(x.asking_price)}"></div><div><label>Minimum Price ₹</label><input id=f9 type=number value="${esc(x.minimum_price)}"></div><div><label>Owner</label><select id=f10>${opts(state.owners,x.owner_id,'Select owner')}</select></div><div class=full><label>Description / Remarks</label><textarea id=f11>${esc(x.description||x.remarks)}</textarea></div></div>`;
   if(type==='owner')return `<div class=grid><div><label>Owner ID</label><input id=fid value="${esc(x.owner_id||('OWN-'+Date.now().toString().slice(-7)))}"></div><div><label>Name *</label><input id=f1 value="${esc(x.name)}"></div><div><label>Mobile *</label><input id=f2 value="${esc(x.mobile)}"></div><div><label>WhatsApp</label><input id=f3 value="${esc(x.whatsapp)}"></div><div><label>Email</label><input id=f4 value="${esc(x.email)}"></div><div class=full><label>Address</label><input id=f5 value="${esc(x.address)}"></div><div class=full><label>Notes</label><textarea id=f8>${esc(x.notes)}</textarea></div></div>`;
-  if(type==='client')return `<div class=grid><div><label>Client ID</label><input id=fid value="${esc(x.client_id||('CLI-'+Date.now().toString().slice(-7)))}"></div><div><label>Name *</label><input id=f1 value="${esc(x.name)}"></div><div><label>Mobile *</label><input id=f2 value="${esc(x.mobile)}"></div><div><label>WhatsApp</label><input id=f3 value="${esc(x.whatsapp)}"></div><div><label>Email</label><input id=f4 value="${esc(x.email)}"></div><div><label>Status</label><select id=f5>${['New','Contacted','Requirement Confirmed','Property Shared','Site Visit','Negotiation','Token','Closed','Lost','Not Interested'].map(v=>`<option ${v===(x.status||'New')?'selected':''}>${v}</option>`).join('')}</select></div><div><label>Preferred Location</label><input id=f6 value="${esc(x.preferred_location)}"></div><div><label>Source</label><input id=f6source value="${esc(x.source||'') }" placeholder="Referral, Website, Walk-in..."></div><div><label>Listing</label><select id=f6listing><option ${x.listing_type!=='Rent'?'selected':''}>Sale</option><option ${x.listing_type==='Rent'?'selected':''}>Rent</option></select></div><div><label>Furnishing</label><select id=f6furnishing><option value="">Select furnishing</option><option ${x.furnishing==='Furnished'?'selected':''}>Furnished</option><option ${x.furnishing==='Semi-Furnished'?'selected':''}>Semi-Furnished</option><option ${x.furnishing==='Unfurnished'?'selected':''}>Unfurnished</option></select></div><div><label>Property Type</label><select id=f7 onchange="toggleClientTypeField()"><option value="Any">Any</option>${['Flat','Villa','House','Plot','Shop','Office','Warehouse','Other'].map(v=>`<option ${v===x.property_type?'selected':''}>${v}</option>`).join('')}</select></div><div id=clientTypeField><label>Type</label><select id=f8>${['Any','1 RK','1 BHK','1.5 BHK','2 BHK','2.5 BHK','3 BHK','3.5 BHK','4 BHK','4.5 BHK','5 BHK','6 BHK','1 BHK jodi','2+1 BHK jodi','2 BHK jodi','3 BHK jodi','4 BHK jodi','2 BHK duplex','3 BHK duplex','4 BHK duplex','5 BHK duplex','6 BHK duplex'].map(v=>`<option ${v===x.bhk?'selected':''}>${v}</option>`).join('')}</select></div><div><label>Min Budget ₹</label><input id=f9 type=number value="${esc(x.min_budget)}"></div><div><label>Max Budget ₹</label><input id=f10 type=number value="${esc(x.max_budget)}"></div><div><label>Purpose</label><select id=f11><option>Self-use</option><option>Investment</option><option>Other</option></select></div><div><label>Loan Required</label><select id=f12><option value="false">No</option><option value="true">Yes</option></select></div><div><label>Required Area sq.ft.</label><input id=f13 type=number value="${esc(x.required_area_sqft)}"></div><div class=full><label>Requirements / Notes</label><textarea id=f14>${esc(x.notes)}</textarea></div></div>`;
+  if(type==='client')return `<div class=grid><div><label>Client ID</label><input id=fid value="${esc(x.client_id||('CLI-'+Date.now().toString().slice(-7)))}"></div><div><label>Name *</label><input id=f1 value="${esc(x.name)}"></div><div><label>Mobile *</label><input id=f2 value="${esc(x.mobile)}"></div><div><label>WhatsApp</label><input id=f3 value="${esc(x.whatsapp)}"></div><div><label>Email</label><input id=f4 value="${esc(x.email)}"></div><div><label>Status</label><select id=f5>${['New','Contacted','Requirement Confirmed','Property Shared','Site Visit','Negotiation','Token','Closed','Lost','Not Interested'].map(v=>`<option ${v===(x.status||'New')?'selected':''}>${v}</option>`).join('')}</select></div><div><label>Priority</label><select id=fPriority><option value="" ${!x.priority?'selected':''}>No Priority</option><option ${x.priority==='Hot'?'selected':''}>Hot</option><option ${x.priority==='Warm'?'selected':''}>Warm</option><option ${x.priority==='Cold'?'selected':''}>Cold</option></select></div><div><label>Favorite</label><select id=fFavorite><option value="false" ${!x.is_favorite?'selected':''}>☆ Normal</option><option value="true" ${x.is_favorite?'selected':''}>⭐ Favorite</option></select></div><div><label>Preferred Location</label><input id=f6 value="${esc(x.preferred_location)}"></div><div><label>Source</label><input id=f6source value="${esc(x.source||'') }" placeholder="Referral, Website, Walk-in..."></div><div><label>Listing</label><select id=f6listing><option ${x.listing_type!=='Rent'?'selected':''}>Sale</option><option ${x.listing_type==='Rent'?'selected':''}>Rent</option></select></div><div><label>Furnishing</label><select id=f6furnishing><option value="">Select furnishing</option><option ${x.furnishing==='Furnished'?'selected':''}>Furnished</option><option ${x.furnishing==='Semi-Furnished'?'selected':''}>Semi-Furnished</option><option ${x.furnishing==='Unfurnished'?'selected':''}>Unfurnished</option></select></div><div><label>Property Type</label><select id=f7 onchange="toggleClientTypeField()"><option value="Any">Any</option>${['Flat','Villa','House','Plot','Shop','Office','Warehouse','Other'].map(v=>`<option ${v===x.property_type?'selected':''}>${v}</option>`).join('')}</select></div><div id=clientTypeField><label>Type</label><select id=f8>${['Any','1 RK','1 BHK','1.5 BHK','2 BHK','2.5 BHK','3 BHK','3.5 BHK','4 BHK','4.5 BHK','5 BHK','6 BHK','1 BHK jodi','2+1 BHK jodi','2 BHK jodi','3 BHK jodi','4 BHK jodi','2 BHK duplex','3 BHK duplex','4 BHK duplex','5 BHK duplex','6 BHK duplex'].map(v=>`<option ${v===x.bhk?'selected':''}>${v}</option>`).join('')}</select></div><div><label>Min Budget ₹</label><input id=f9 type=number value="${esc(x.min_budget)}"></div><div><label>Max Budget ₹</label><input id=f10 type=number value="${esc(x.max_budget)}"></div><div><label>Purpose</label><select id=f11><option>Self-use</option><option>Investment</option><option>Other</option></select></div><div><label>Loan Required</label><select id=f12><option value="false">No</option><option value="true">Yes</option></select></div><div><label>Required Area sq.ft.</label><input id=f13 type=number value="${esc(x.required_area_sqft)}"></div><div class=full><label>Requirements / Notes</label><textarea id=f14>${esc(x.notes)}</textarea></div></div>`;
   return '';
 }
 function togglePropertyTypeField(){const type=$('fs2')?.value;const show=['Flat','Villa','House'].includes(type);if($('propertyTypeField'))$('propertyTypeField').style.display=show?'block':'none'}
@@ -467,7 +478,7 @@ async function saveProperty(){const o={id:editing||uuid(),property_id:$('fid').v
 function openOwner(id){editing=id||null;const x=id?state.owners.find(a=>a.id===id):{};modal(id?'Edit Owner':'Add Owner',fields('owner',x)+formBtns('saveOwner'))}
 async function saveOwner(){const o={id:editing||uuid(),owner_id:$('fid').value.trim(),name:$('f1').value.trim(),mobile:$('f2').value.trim(),whatsapp:$('f3').value.trim(),email:$('f4').value.trim(),address:$('f5').value.trim(),notes:$('f8').value.trim()};if(!o.name||!o.mobile)return alert('Name and mobile are required');await saveRow('owners',o)}
 function openClient(id){editing=id||null;const x=id?state.clients.find(a=>a.id===id):{};modal(id?'Edit Customer':'Add Customer',fields('client',x)+formBtns('saveClient'));if($('f11'))$('f11').value=x.purpose||'Self-use';if($('f12'))$('f12').value=String(!!x.loan_required);toggleClientTypeField()}
-async function saveClient(){const propertyType=$('f7').value;const o={id:editing||uuid(),client_id:$('fid').value.trim(),name:$('f1').value.trim(),mobile:$('f2').value.trim(),whatsapp:$('f3').value.trim(),email:$('f4').value.trim(),status:$('f5').value,preferred_location:$('f6').value.trim(),source:$('f6source').value.trim()||null,listing_type:$('f6listing').value,furnishing:$('f6furnishing').value||null,property_type:propertyType,bhk:['Flat','Villa','House'].includes(propertyType)?$('f8').value:'',min_budget:num('f9'),max_budget:num('f10'),purpose:$('f11').value,loan_required:$('f12').value==='true',required_area_sqft:num('f13'),notes:$('f14').value.trim()};if(!o.name||!o.mobile)return alert('Name and mobile are required');await saveRow('clients',o)}
+async function saveClient(){const propertyType=$('f7').value;const o={id:editing||uuid(),client_id:$('fid').value.trim(),name:$('f1').value.trim(),mobile:$('f2').value.trim(),whatsapp:$('f3').value.trim(),email:$('f4').value.trim(),status:$('f5').value,priority:$('fPriority').value||null,is_favorite:$('fFavorite').value==='true',preferred_location:$('f6').value.trim(),source:$('f6source').value.trim()||null,listing_type:$('f6listing').value,furnishing:$('f6furnishing').value||null,property_type:propertyType,bhk:['Flat','Villa','House'].includes(propertyType)?$('f8').value:'',min_budget:num('f9'),max_budget:num('f10'),purpose:$('f11').value,loan_required:$('f12').value==='true',required_area_sqft:num('f13'),notes:$('f14').value.trim()};if(!o.name||!o.mobile)return alert('Name and mobile are required');await saveRow('clients',o)}
 function leadForm(x){return `<div class=grid><div><label>Lead ID</label><input id=fid value="${esc(x.lead_id||('LEAD-'+Date.now().toString().slice(-7)))}"></div><div><label>Client *</label><select id=f1>${opts(state.clients,x.client_id,'Select client')}</select></div><div><label>Property</label><select id=f2>${opts(state.properties,x.property_id,'Select property')}</select></div><div><label>Source</label><input id=f3 value="${esc(x.source||'Referral')}"></div><div><label>Status</label><select id=f4>${['New','Contacted','Requirement Confirmed','Property Shared','Site Visit','Negotiation','Token','Closed','Lost'].map(v=>`<option ${v===(x.status||'New')?'selected':''}>${v}</option>`).join('')}</select></div><div><label>Next Follow-up</label><input id=f5 type=date value="${esc(x.next_followup||today())}"></div><div class=full><label>Notes</label><textarea id=f6>${esc(x.notes)}</textarea></div></div>`}
 function openLead(id){editing=id||null;const x=id?state.leads.find(a=>a.id===id):{};modal(id?'Edit Lead':'Add Lead',leadForm(x)+formBtns('saveLead'))}
 async function saveLead(){const o={id:editing||uuid(),lead_id:$('fid').value.trim(),client_id:$('f1').value,property_id:$('f2').value||null,source:$('f3').value.trim(),status:$('f4').value,next_followup:$('f5').value||null,notes:$('f6').value.trim(),assigned_to:state.user.id};if(!o.client_id)return alert('Select a client');await saveRow('leads',o)}
@@ -701,257 +712,4 @@ async function migrateV2(){
 }
 
 if(!hasConfig){setupScreen()}else{sb.auth.getSession().then(async ({data:{session}})=>{if(session)await boot();else loginScreen()});sb.auth.onAuthStateChange((event,session)=>{if(event==='SIGNED_OUT')loginScreen();if(event==='PASSWORD_RECOVERY'&&session)openRecoveryPassword()});}
-</script>
-<script id="mitwa-mobile-table-labels">
-(function(){
-  function labelTables(root){
-    (root||document).querySelectorAll('.crm-table').forEach(function(table){
-      var heads=Array.from(table.querySelectorAll(':scope > thead > tr > th')).map(function(th){return (th.textContent||'').trim()});
-      if(!heads.length)return;
-      table.querySelectorAll(':scope > tbody > tr').forEach(function(row){
-        Array.from(row.children).forEach(function(td,i){
-          if(td.tagName==='TD' && heads[i]) td.setAttribute('data-label',heads[i]);
-        });
-      });
-    });
-  }
-  document.addEventListener('DOMContentLoaded',function(){
-    labelTables(document);
-    var obs=new MutationObserver(function(muts){
-      var changed=false;
-      muts.forEach(function(m){if(m.addedNodes&&m.addedNodes.length)changed=true});
-      if(changed)labelTables(document);
-    });
-    var root=document.getElementById('root')||document.body;
-    obs.observe(root,{childList:true,subtree:true});
-  });
-})();
-</script>
-
-<style id="mitwa-mobile-app-cards">
-/* MITWA CRM — compact mobile app-style record cards */
-@media (max-width:700px){
-  html,body{overflow-x:hidden!important;background:#f4f7fb!important}
-  main{padding:12px 10px 28px!important}
-  .section{margin:12px 2px 8px!important;align-items:center}
-  .section h2{font-size:20px!important}
-  .toolbar{margin:0 0 10px!important;padding:5px!important;border-radius:13px!important}
-  .toolbar input{height:44px!important;font-size:14px!important;padding:9px 11px!important}
-
-  /* Compact card container */
-  .table-wrap{
-    overflow:visible!important;
-    background:transparent!important;
-    border:0!important;
-    box-shadow:none!important;
-    border-radius:0!important;
-  }
-  .crm-table{
-    display:block!important;
-    width:100%!important;
-    min-width:0!important;
-    border:0!important;
-    border-collapse:separate!important;
-  }
-  .crm-table thead{display:none!important}
-  .crm-table tbody{display:flex!important;flex-direction:column!important;gap:10px!important}
-  .crm-table tbody tr{
-    display:grid!important;
-    grid-template-columns:minmax(112px,.72fr) minmax(0,1.28fr)!important;
-    gap:0!important;
-    width:100%!important;
-    margin:0!important;
-    padding:8px 10px 9px!important;
-    background:#fff!important;
-    border:1px solid #dfe7ef!important;
-    border-radius:15px!important;
-    box-shadow:0 4px 14px rgba(16,42,67,.08)!important;
-    cursor:pointer!important;
-  }
-  .crm-table tbody tr:hover{background:#fff!important}
-  .crm-table td{
-    display:flex!important;
-    align-items:center!important;
-    min-width:0!important;
-    width:auto!important;
-    min-height:31px!important;
-    padding:6px 3px!important;
-    border:0!important;
-    border-bottom:1px solid #edf1f5!important;
-    font-size:12px!important;
-    line-height:1.25!important;
-    white-space:normal!important;
-    overflow-wrap:anywhere!important;
-  }
-  .crm-table td:nth-last-child(1){border-bottom:0!important}
-  .crm-table td::before{
-    content:attr(data-label)!important;
-    flex:0 0 100px!important;
-    max-width:100px!important;
-    margin-right:8px!important;
-    color:#64758b!important;
-    font-size:9px!important;
-    font-weight:900!important;
-    text-transform:uppercase!important;
-    letter-spacing:.025em!important;
-  }
-  .crm-table td .linkish{font-size:12.5px!important}
-  .crm-table td .muted{font-size:9px!important}
-  .crm-table td .actions{
-    display:flex!important;
-    gap:5px!important;
-    flex-wrap:wrap!important;
-    width:100%!important;
-    margin:0!important;
-  }
-  .crm-table td:last-child{
-    grid-column:1/-1!important;
-    padding:8px 0 1px!important;
-    border-bottom:0!important;
-    border-top:1px solid #edf1f5!important;
-    margin-top:2px!important;
-  }
-  .crm-table td:last-child::before{display:none!important}
-  .crm-table td:last-child button{
-    padding:8px 10px!important;
-    min-height:35px!important;
-    font-size:11px!important;
-    border-radius:9px!important;
-  }
-  .crm-table td .match-count{
-    padding:4px 8px!important;
-    min-height:26px!important;
-  }
-
-  /* Keep cards visually compact when optional columns are empty */
-  .crm-table td:empty{display:none!important}
-
-  /* Owner/Customer/Property cards use the same app-like density */
-  #olist,#plist,#clist{width:100%!important}
-}
-</style>
-<script>
-(function(){
-  function labelMobileTables(){
-    document.querySelectorAll('.crm-table').forEach(function(table){
-      var headers=[...table.querySelectorAll('thead th')].map(function(th){
-        return (th.textContent||'').trim();
-      });
-      table.querySelectorAll('tbody tr').forEach(function(row){
-        [...row.children].forEach(function(td,i){
-          td.setAttribute('data-label',headers[i]||'');
-        });
-      });
-    });
-  }
-  document.addEventListener('DOMContentLoaded',labelMobileTables);
-  var mo=new MutationObserver(function(){labelMobileTables();});
-  document.addEventListener('DOMContentLoaded',function(){
-    mo.observe(document.body,{subtree:true,childList:true});
-  });
-})();
-</script>
-
-</body></html>
-<style id="mitwa-mobile-app-v2">
-@media (max-width:700px){
-  /* Header: keep CRM name on one line */
-  .app>header{display:flex!important;flex-direction:row!important;align-items:center!important;justify-content:space-between!important;gap:8px!important;padding:12px 14px!important;min-height:58px!important;height:58px!important;white-space:nowrap!important}
-  .app>header>div:first-child{min-width:0!important;flex:1 1 auto!important;overflow:hidden!important}
-  .app>header h1{font-size:17px!important;line-height:1.1!important;white-space:nowrap!important;overflow:visible!important;text-overflow:clip!important;margin:0!important;letter-spacing:-.2px!important}
-  .app>header p{display:none!important}
-  .app>.header-actions{width:auto!important;flex:0 0 auto!important;margin:0!important;display:flex!important;flex-direction:row!important;align-items:center!important}
-  .app>.header-actions .userpill{display:none!important}
-  .app>.header-actions .secondary{margin:0!important;padding:7px 9px!important;font-size:11px!important;border-radius:9px!important}
-  .nav{top:58px!important;height:46px!important;min-height:46px!important}
-
-  /* App-style records: two compact information columns */
-  .table-wrap{margin:0!important}
-  .crm-table{display:block!important;width:100%!important;min-width:0!important}
-  .crm-table thead{display:none!important}
-  .crm-table tbody{display:flex!important;flex-direction:column!important;gap:10px!important}
-  .crm-table tbody tr{
-    display:grid!important;
-    grid-template-columns:1fr 1fr!important;
-    width:100%!important;
-    padding:10px 11px 9px!important;
-    margin:0!important;
-    border-radius:15px!important;
-    background:#fff!important;
-    border:1px solid #dbe5ef!important;
-    box-shadow:0 3px 12px rgba(16,42,67,.07)!important;
-    overflow:hidden!important;
-  }
-  .crm-table tbody td{
-    grid-column:auto!important;
-    display:grid!important;
-    grid-template-columns:max-content minmax(0,1fr)!important;
-    align-items:center!important;
-    gap:5px!important;
-    min-width:0!important;
-    min-height:34px!important;
-    padding:6px 5px!important;
-    border:0!important;
-    border-bottom:1px solid #edf2f6!important;
-    font-size:12px!important;
-    line-height:1.25!important;
-    text-align:left!important;
-    white-space:normal!important;
-    overflow:hidden!important;
-  }
-  .crm-table tbody td::before{
-    content:attr(data-label)!important;
-    display:block!important;
-    flex:none!important;
-    width:auto!important;
-    max-width:none!important;
-    margin:0!important;
-    color:#718096!important;
-    font-size:8.5px!important;
-    font-weight:900!important;
-    text-transform:uppercase!important;
-    letter-spacing:.25px!important;
-    line-height:1.1!important;
-    white-space:nowrap!important;
-  }
-  .crm-table tbody td > *{min-width:0!important;max-width:100%!important;overflow:hidden!important;text-overflow:ellipsis!important}
-  .crm-table tbody td .linkish{font-size:12.5px!important;font-weight:800!important;color:#125fae!important}
-  .crm-table tbody td .muted{font-size:9px!important}
-
-  /* First field is the card title */
-  .crm-table tbody td:first-child{
-    grid-column:1/-1!important;
-    min-height:43px!important;
-    padding:4px 5px 8px!important;
-    border-bottom:1px solid #e4ebf2!important;
-    grid-template-columns:1fr!important;
-    align-items:start!important;
-  }
-  .crm-table tbody td:first-child::before{display:none!important}
-  .crm-table tbody td:first-child .linkish{font-size:16px!important;line-height:1.15!important}
-  .crm-table tbody td:first-child .muted{font-size:9px!important;color:#7b8797!important;margin-top:2px!important}
-
-  /* Actions span the complete card width */
-  .crm-table tbody td:last-child{
-    grid-column:1/-1!important;
-    display:block!important;
-    min-height:0!important;
-    padding:9px 2px 1px!important;
-    margin-top:2px!important;
-    border:0!important;
-    border-top:1px solid #e7edf3!important;
-    text-align:left!important;
-  }
-  .crm-table tbody td:last-child::before{display:none!important}
-  .crm-table tbody td:last-child .actions{display:flex!important;gap:6px!important;flex-wrap:wrap!important;width:100%!important}
-  .crm-table tbody td:last-child button{min-height:34px!important;padding:7px 10px!important;font-size:11px!important;border-radius:9px!important}
-
-  /* Hide empty fields so cards stay short */
-  .crm-table tbody td:has(> .muted:only-child){min-height:0!important}
-
-  /* Section spacing */
-  main{padding:12px 10px 26px!important}
-  .section{margin:10px 2px 8px!important}
-  .section h2{font-size:20px!important}
-}
-</style>
+</script></body></html>
